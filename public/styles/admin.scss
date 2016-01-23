@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "butler";
+  src: "fonts/Butler/Butler_Medium_Stencil.otf";
+
+}
+.title-trw{font-family: Arial;}
+.adm-text-p{
+  font-family: Helvetica,'Fjalla One', sans-serif; font-size: 13px;font-weight: 200;
+}
+.list-profile{font-size: 15px; color: #555555;}
+.rol{font-size: 15px; font-family: 'Fjalla One', sans-serif; color: #555555;}
+.trw-service-selects{ font-size: 21px; height: 42px;}
+
+.btns-go{align-content: center; text-align: center;
+  button{margin-right: 10px;}
+}
+
+#contend-app-trw{margin-top: 30px;}
+
+.twr-lang{background: #e9e9ff; float: left; padding: 6px 5px 5px 5px; margin-right:5px; margin-bottom:4px;
+  img{width: 23px; float: left;}
+  i{line-height:80%; font-size: 12px; float: left;
+  }
+  i:hover{color: #ffffff; cursor: pointer;}
+}
+.name-language{margin-top: 10px; float: left; font-family: 'Fjalla One', sans-serif;line-height: 35%; margin-left: 9px; font-size: 16px;}
+.trw-service-selects{ font-size: 21px; height: 42px;}
+
+.btn-select-trw{font-family: 'Fjalla One', sans-serif;}
+
+.twr-professions{background: #e9e9ff; float: left; padding: 6px 5px 5px 5px; margin-right:5px; margin-bottom:4px;align-content: center; text-align: center;
+  .icon-profession{font-size: 45px; font-weight: 800;}span{font-family: 'Fjalla One', sans-serif;}
+
+}
+
+.cancel-trw-icon{padding-right: 0px;}.cancel-trw-icon:hover{color: #FFFFFF;cursor: pointer;}
+.trw-icon-sm{font-size: 20px;}
+.trw-list{font-family: 'Fjalla One', sans-serif; font-size: 14px;
+  img{width: 23px;}
+}
+
+.icon-medium{font-size: 16px;}
+.workteam-lang{width: 20px; float: right;}
+
+/* PANEL IDIOMAS */
+
+.trw-lang{float: left; line-height: 40px;solid:1px solid #eee; cursor: pointer; outline: 1px solid #EEEEEE; padding: 5px 7px 3px 7px; transition-duration:0.2s;
+img{float: left; margin-right: 10px; width:31px}}
+.trw-lang:hover{background: #3894DB; color: #FFFFFF}
+.trw-title-lang{font-family: 'Fjalla One', sans-serif; font-size: 13px; float: left;}
+.trw-select-lang{
+  div:hover{background: #3894DB; color: #FFFFFF}
+}
+
+.select-lang{background: #3894DB; color: #FFFFFF}
+.select-lang:hover{}
+.unselect-lang{}
+.tooltip{font-family:'Open Sans'; font-size:15px;}
+.trw-nnw{background: #fefefe; min-height: 170px; padding-top:7px; font-family:'Open Sans'}
+.trw-note{border:1px solid #eeeeee; padding:14px; margin-bottom:7px; font-size:15px;}
+.close-note{float:right; position:relative;color:#cccccc; :hover{font-size:17px;}}
+.trw-preference-label-panel{padding:7px;}
+.trw-font-menu{font-family: Bitter, serif;}
+
+// SETTINGS
+
+.congif-languages{ img{width:20px;}}
+.available-img-list{img{width:28px;}}
+.list-lang-add{height:400px; background:#ffffff;overflow-y:auto;}
+.form-text-add{input,select{font-size:16px; font-family: 'Open Sans', Helvetica,sans-serif;}}
+
+

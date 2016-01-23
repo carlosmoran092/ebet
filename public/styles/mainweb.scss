@@ -1,0 +1,156 @@
+
+.trw-header{
+  background: #ffffff;
+}
+.trw-ul>li{
+  display: inline;
+  height: 100%;
+  background: #ffffff;
+  font-size: 16px;
+  padding: 16px 7px 17px 7px;
+  float: left;
+  border: solid 0px 1px 0px 1px #6f0300;
+  width: 110px;
+  text-align: center;
+}
+.trw-menu{font-family: 'Fjalla One', sans-serif;}
+.trw-logo{font-family: 'Bitter', serif; font-size: 22px;}
+#feature{
+  padding: 10px 0px 6px 0px;
+  display: flex;
+  display: -webkit-flex;
+  color:#ffffff;
+
+  i{align-content: center;color:#fefefe}
+  div{height: 200px;
+    display: flex;
+    //background: #ffffaa;
+    flex: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.big-i{font-size:100px; text-align: center; align-content: center;}
+
+.popover-content {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 0px 8px 0px;
+  .list-group{
+    border-color: #FFFFFF;
+  }
+}
+.dropdown:hover .dropdown-menu {
+  display: block;}
+.twr-sub-menu{ left: 40%}
+
+ul li:hover ul.dropdown{
+  display: block; /* Display the dropdown */
+}
+footer{background: #000000;height: 80px;
+h4{font-family: 'Bitter', serif; font-size: 17px;font-weight: 600; color:#FFFFFF }
+}
+.register{font-family:'Fjalla One', sans-serif;
+a{font-size: 12px;}
+}
+.tab-pan{
+  label{
+    color: #fef1ec;}
+}
+.arrow{margin-right: 10px;}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{width: 30px;}
+
+.select2-search-choice{padding: 3px 4px 3px 4px; background: #FFFFFF}
+
+.btns-go{align-content: center; text-align: center;
+button{margin-right: 10px;}
+}
+
+#contend-app-trw{margin-top: 30px;}
+
+.twr-lang{background: #e9e9ff; float: left; padding: 6px 5px 5px 5px; margin-right:5px; margin-bottom:4px;
+  img{width: 23px; float: left;}
+  i{line-height:80%; font-size: 12px; float: left;
+    }
+  i:hover{color: #ffffff; cursor: pointer;}
+}
+.name-language{margin-top: 10px; float: left; font-family: 'Fjalla One', sans-serif;line-height: 35%; margin-left: 9px; font-size: 16px;}
+.trw-service-selects{ font-size: 21px; height: 42px;}
+
+.btn-select-trw{font-family: 'Fjalla One', sans-serif;}
+
+.twr-professions{background: #e9e9ff; float: left; padding: 6px 5px 5px 5px; margin-right:5px; margin-bottom:4px;align-content: center; text-align: center;
+  .icon-profession{font-size: 45px; font-weight: 800;}span{font-family: 'Fjalla One', sans-serif;}
+
+}
+
+.cancel-trw-icon{padding-right: 0px;}.cancel-trw-icon:hover{color: #FFFFFF;cursor: pointer;}
+.trw-icon-sm{font-size: 20px;}
+.trw-list{font-family: 'Fjalla One', sans-serif; font-size: 14px;
+img{width: 23px;}
+}
+
+.icon-medium{font-size: 16px;}
+.workteam-lang{width: 20px; float: left;}
+
+.panel-footer{
+  img{width: 25px;}
+}
+.trw-text-profile{font-size: 17px;}
+
+/* PANEL IDIOMAS */
+
+.trw-lang{float: left; line-height: 40px;solid:1px solid #eee; cursor: pointer; outline: 1px solid #EEEEEE; padding: 5px 7px 5px 7px; transition-duration:0.2s;
+img{float: left; margin-right: 10px;} :hover{background: #3894DB; color: #FFFFFF}}
+.trw-title-lang{font-family: 'Fjalla One', sans-serif; font-size: 20px; float: left;}
+.trw-select-lang{
+  div:hover{background: #3894DB; color: #FFFFFF}
+}
+
+.four-main{background:#3894DB;}
+.text-footer{margin-top:30px; font-family: 'Bitter', serif;}
+.trw-tm{font-family:arial,Helvetica;}
+
+// JOIN
+
+.form-join{font-family:Helvetica,'Open Sans'; font-size:18px;}
+.form-terms{font-size:17px;}
+.title-web{margin:20px 0px 50px 0px; font-size:50px;}
+.text-p{font-size:20px;}
+.container-service{margin-bottom:40px;}
+
+h3>a{color:white; &:hover{color:#fff}} 
+
+// HOME
+.text-title{font-size:37px; margin-bottom:17px; font-weight:600;}
+.p-home{font-size:19px;}
+
+
+.review-process-set-img{img{float:left; margin-right:20px;}}
+
+.panel-blue{background:#3894DB; padding:20px 50px 20px 120px; color:#ffffff;
+@media (max-width: 700px){padding:10px 50px 20px 70px;}
+}
+
+.panel-image{padding:0px; min-height:279px; height:100%; background:url('http://dummyimage.com/600x280/4d494d/686a82.gif&text=placeholder+image');}
+
+.contend-thum{display:flex;justify-content:center;
+img{margin:10px 50px 10px 10px;@media (max-width: 600px){margin:10px 10px 10px 10px}}
+
+}
+.p-stick-out{}
+
+.center-support{display:flex; justify-content:center;}
+
+.panel-blue-right{
+  @extend .panel-blue; padding:10px 70px 20px 40px;
+}
+.quotation-service{
+  background:#dddddd;
+  padding:25px 50px 25px 50px;
+  text-align:center;
+  font-size: 29px;
+}

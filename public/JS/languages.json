@@ -1,0 +1,169 @@
+[{
+	"title"  : 	"American English",
+	"image"  :  "United States",
+	"name"   :  "american_english",
+	"iso"    :  "US"
+},
+{
+	"title"  : 	"British English",
+	"image"  :  "United Kingdom",
+	"name"   :  "british_english",
+	"iso"    :  "UK"
+},
+{
+	"title"  : 	"Spanish",
+	"image"  :  "Spain",
+	"name"   :  "spanish",
+	"iso"    :  "ES"
+},
+{
+	"title"  :  "Spanish American",
+	"image"  :  "Mexico",
+	"name"   :  "spanish_american",
+	"iso"    :  "ES-L"
+},
+{
+	"title"  :  "Mandarin",
+	"image"  :  "China",
+	"name"   :  "mandarin",
+	"iso"    :  "CH"
+},
+{
+	"title"  :  "French",
+	"image"  :  "France",
+	"name"   :  "french",
+	"iso"    :  "FR"
+},
+{
+	"title"  :  "Russian",
+	"image"  :  "Russia",
+	"name"   :  "russian",
+	"iso"    :  "RU"
+},
+{
+	"title"  :  "Portuguese",
+	"image"  :  "Portugal",
+	"name"   :  "portuguese",
+	"iso"    :  "PT"
+},
+{
+	"title"  :  "Brazilian Portuguese",
+	"image"  :  "Brazil",
+	"name"   :  "brazilian_portuguese",
+	"iso"    :  "PT-B"
+},
+{
+	"title"  :  "Italian",
+	"image"  :  "Italy",
+	"name"   :  "italian",
+	"iso"    :  "IT"
+},
+{
+	"title"  :  "Japanese",
+	"image"  :  "Japan",
+	"name"   :  "japanese",
+	"iso"    :  "JA"
+},
+{
+	"title"  :  "Belgian",
+	"image"  :  "Belgium",
+	"name"   :  "belgian",
+	"iso"    :  "BL"
+},
+{
+	"title"  :  "Hungarian",
+	"image"  :  "Hungary",
+	"name"   :  "hungarian",
+	"iso"    :  "HU"
+},
+{
+	"title"  :  "Romanian",
+	"image"  :  "Romania",
+	"name"   :  "romanian",
+	"iso"    :  "RO"
+},
+{
+	"title"  :  "Bulgaria",
+	"image"  :  "Bulgaria",
+	"name"   :  "bulgaria",
+	"iso"    :  "BG"
+},
+{
+	"title"  :  "Albanian",
+	"image"  :  "Albania",
+	"name"   :  "albanian",
+	"iso"    :  "ALB"
+},
+{
+	"title"  :  "Turkish",
+	"image"  :  "Turkey",
+	"name"   :  "turkish",
+	"iso"    :  "TR"
+},
+{
+	"title"  :  "German",
+	"image"  :  "Germany",
+	"name"   :  "german",
+	"iso"    :  "DE"
+},
+{
+	"title"  :  "Swedish",
+	"image"  :  "Sweden",
+	"name"   :  "swedish",
+	"iso"    :  "SV"
+},
+{
+	"title"  :  "Finnish",
+	"image"  :  "Finland",
+	"name"   :  "finnish",
+	"iso"    :  "FIN"
+},
+{
+	"title"  :  "Korean",
+	"image"  :  "South Korea",
+	"name"   :  "korean",
+	"iso"    :  "KO"
+},
+{
+	"title"  :  "Arabian",
+	"image"  :  "Libya",
+	"name"   :  "arabian",
+	"iso"    :  "AR"
+},
+{
+	"title"  :  "Hebrew",
+	"image"  :  "Israel",
+	"name"   :  "hebrew",
+	"iso"    :  "HE"
+},
+{
+	"title"  :  "Greek",
+	"image"  :  "Greece",
+	"name"   :  "greek",
+	"iso"    :  "EL"
+},
+{
+	"title"  :  "Farsi",
+	"image"  :  "Iran",
+	"name"   :  "farsi",
+	"iso"    :  "FA"
+},
+{
+	"title"  :  "Hindi",
+	"image"  :  "India",
+	"name"   :  "hindi",
+	"iso"    :  "HI"
+},
+{
+	"title"  :  "Tagalog",
+	"image"  :  "Philippines",
+	"name"   :  "tagalog",
+	"iso"    :  "TL"
+},
+{
+	"title"  :  "Dutch",
+	"image"  :  "Netherlands",
+	"name"   :  "dutch",
+	"iso"    :  "NL"
+
+}]
