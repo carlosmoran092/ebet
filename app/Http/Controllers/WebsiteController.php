@@ -30,21 +30,21 @@ class WebsiteController extends Controller
         $translator->gender = $request->input('gender');
         $translator->birthday = $request->input('birthday');
         $translator->email = $request->input('email');
-        $translator->password = $request->input('password');
+        $translator->password = bcrypt($request->input('password'));
         $translator->phone = $request->input('phone');
         $translator->skype = $request->input('skype');
-        $translator->website = $request->input('website');
+        $translator->web_site = $request->input('website');
         $translator->residence_country = $request->input('home_country');
 
         $translator->idioms = json_encode($request->input('known_languages'));
         $translator->preferences = json_encode($request->input('preferences'));
         $translator->professional_profile = $request->input('professional_profile');
-        $translator->state = 1;
+        $translator->state = 0;
 
         $translator->save();
 
 
-    	return($request->all());
+        return($request->all());
     }
     public function worldExperts(){
     	return view('website.services.world-experts');
@@ -57,8 +57,16 @@ class WebsiteController extends Controller
     {
         return view('website.services.permanent-support');
     }
+    public function ourCompany()
+    {
+        return view('website.about.our-company');
+    }
     public function contact()
     {
         return view('website.contacts.index');
+    }
+    public function about()
+    {
+        return view('website.about.index');
     }
 }

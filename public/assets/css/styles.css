@@ -72,6 +72,18 @@ a.btn-cta-secondary:hover,
   border: 2px solid #ec6952;
   color: #fff;
 }
+a.btn-cta-tertiary,
+.btn-cta-tertiary {
+  background: none;
+  border: 2px solid #3894DB;
+  color: #3894db;
+}
+a.btn-cta-tertiary:hover,
+.btn-cta-tertiary:hover {
+  background: #ec6952;
+  border: 2px solid #ec6952;
+  color: #fff;
+}
 a.btn-ghost,
 .btn-ghost {
   background: none;
@@ -274,7 +286,7 @@ background: #3894DB;
   margin-right: 15px;
 }
 .header .main-nav .nav .nav-item.active a {
-  color: #ec6952;
+  color: #3894DB;
   background: none;
   font-weight: bold;
 }
@@ -457,10 +469,13 @@ background: #3894DB;
   background-image: url('../images/background/bg-header-small-2.jpg');
 }
 .headline-bg.contact-headline-bg {
-  background-image: url('../images/background/bg-header-small-4.jpg');
+  background-image: url('../images/background/bg-header-small-6.jpg');
 }
 .headline-bg.about-headline-bg {
   background-image: url('../images/background/bg-header-small-4.jpg');
+}
+.headline-bg.join-headline-bg {
+  background-image: url('../images/background/bg-header-small-5.jpg');
 }
 /* ======= Promo ======= */
 .promo {
@@ -789,7 +804,7 @@ background: #3894DB;
 }
 /* ======= cta-section ======= */
 .cta-section {
-  background: #253340 url('../images/background/bg-footer-1.jpg') no-repeat left top;
+  background: #253340 url('../images/background/bg-header-small-7.jpg') no-repeat left top;
   background-size: cover;
   min-height: 420px;
   color: #fff;
@@ -797,7 +812,7 @@ background: #3894DB;
   border: none;
 }
 .cta-section.pricing-cta-section {
-  background-image: url('../images/background/bg-footer-2.jpg');
+  background-image: url('../images/background/bg-footer-3.jpg');
 }
 .cta-section.contact-cta-section {
   background-image: url('../images/background/bg-footer-3.jpg');

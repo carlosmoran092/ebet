@@ -36,6 +36,7 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
 
 
  Route::get('/','WebsiteController@index');
+ Route::get('about','WebsiteController@about');
  Route::get('join','WebsiteController@join');
  Route::get('go','WebsiteController@go');
  Route::post('join','WebsiteController@store');
@@ -43,7 +44,7 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
 
 Route::get('world-experts','WebsiteController@worldExperts'); // World Experts
 Route::get('review-process','WebsiteController@reviewProcess');
-Route::get('permanent-support','WebsiteController@permanentSupport');//Permanent Support
+Route::get('our-company','WebsiteController@ourCompany');//Permanent Support
 
 
 Route::get('settings', ['middleware' => 'web', 'uses' => 'settings\SettingsController@index']);

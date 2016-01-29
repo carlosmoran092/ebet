@@ -20,7 +20,7 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="styles/tradokey.css">
 
-{{--  --}}
+    {{--  --}}
 
     <link rel="stylesheet" href="vendor/bootstrap-datepicker-master/dist/css/bootstrap-datepicker3.min.css" />
     <link rel="stylesheet" href="vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
@@ -31,7 +31,7 @@
     {!! HTML::style('vendor/sweetalert/lib/sweet-alert.css') !!}
 
 
-{{--  --}}
+    {{--  --}}
 
     {!! HTML::style('vendor/fontawesome/css/font-awesome.css') !!}
     {!! HTML::style('vendor/metisMenu/dist/metisMenu.css') !!}
@@ -52,65 +52,23 @@
 
   <body class="contact-page">
     <div class="wrapper">
-        <!-- ******HEADER****** --> 
-        <header id="header" class="header navbar-fixed-top">  
-            <div class="container">       
-                <h1 class="logo">
-                    <a href="index.html"><span class="logo-icon"></span><span class="text">TRADOKEY</span></a>
-                </h1><!--//logo-->
-                <nav class="main-nav navbar-right" role="navigation">
-                    <div class="navbar-header">
-                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button><!--//nav-toggle-->
-                    </div><!--//navbar-header-->
-                    <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item"><a href="index.html">Home</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Services <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="download.html">Download Apps</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                    <li><a href="blog-category.html">Blog Category</a></li>
-                                    <li><a href="blog-archive.html">Blog Archive</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact</a></li>                 
-                                </ul>                            
-                            </li><!--//dropdown-->    
-                            <li class="nav-item">
-                               {!!HTML::link('join', 'Join Us');!!}
-                           </li>
-                           <li class="nav-item"><a href="pricing.html">Pricing</a></li>
 
-                           <li class="nav-item">
-                            {!!HTML::link('login', 'Log in');!!}
-                        </li>
-                        <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="signup.html">Sign Up Free</a></li>
-                    </ul><!--//nav-->
-                </div><!--//navabr-collapse-->
-            </nav><!--//main-nav-->                     
-        </div><!--//container-->
-    </header><!--//header-->
+        @include('layouts.header')
 
-    <div class="headline-bg contact-headline-bg">
-    </div><!--//headline-bg-->
+        <div class="headline-bg join-headline-bg">
+        </div><!--//headline-bg-->
 
 
-    <!-- ******Contact Section****** --> 
-    <section class="contact-section section section-on-bg">
-        <div class="container">
-            <h2 class="title text-center">Join Us</h2>
-            <p class="intro text-center">We’d love to hear from you. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <form id="contact-form" class="contact-form" method="post" action="">                    
+        <!-- ******Contact Section****** --> 
+        <section class="contact-section section section-on-bg">
+            <div class="container">
+                <h1 class="text-center camr-tilte">Join Us</h1>
+                <p class="intro text-center">We want to have more collaborators is so we invite you to link to Tradokey, enter your details in the form below and we will contact you.</p>
+
+                {!! Form::open(array('action' => 'WebsiteController@store','before' => 'csrf','method' => 'post','id'=>'fcontact-form','class'=> 'contact-form')) !!}                    
                 <div class="row">
                     <div class="contact-form-inner col-md-8 col-sm-12 col-xs-12  col-sm-offset-0 xs-offset-0">
-                        <div class="row">                                                           
-
+                        <div class="row">                                                        
                             <div class="form-group"><br>
 
                                 <!-- Nav tabs -->
@@ -123,22 +81,21 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="home">
-                                        <!--     --><br>
+                                        <br>
 
                                         <div class="col-lg-12">
                                             <div class="row">
-                                               {!! Form::open(array('action' => 'WebsiteController@store','before' => 'csrf','method' => 'post','id'=>'form-join')) !!}
 
-                                               <div class="form-group col-lg-6">
+
+                                             <div class="form-group col-lg-6">
                                                 <label>Name</label>
-                                                <input type="text" value="" id="" class="form-control" name="name" >
+                                                <input type="text" value="" id="" class="form-control" required="required"  name="name" >
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label>Last Name</label>
-                                                <input type="text" value="" id="" class="form-control" name="last_name">
+                                                <input type="text" value="" id="" class="form-control" required="required"  name="last_name">
                                             </div>
-                                            <div class="form-group col-lg-3">
-                                                <!--  -->
+                                            <div class="form-group col-lg-3">                                            
                                                 <label>Gender</label>
                                                 <div class="form-group">
                                                     <div class="radio radio-info radio-inline">
@@ -163,11 +120,11 @@
                                             <!--  -->
                                             <div class="form-group col-lg-6">
                                                 <label>Email Address</label>
-                                                <input type="" value="" id="" class="form-control" name="email" placeholder="user@email.com">
+                                                <input type="" value="" id="" class="form-control" name="email" required="required"  placeholder="user@email.com">
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label>Password</label>
-                                                <input type="password" value="" id="" class="form-control" name="password" placeholder="******">
+                                                <input type="password" value="" id="" class="form-control" name="password" required="required"  placeholder="******">
                                             </div>
 
 
@@ -200,8 +157,8 @@
                                             </div>
 
 
-                                        </div>
-                                    </div>
+                                        </div><!-- row -->
+                                    </div><!-- col-lg-12 -->
 
                                 </div>
 
@@ -209,7 +166,7 @@
                                     <br>
                                     <div class="form-group  col-lg-12">
                                         <label>Languages</label>
-                                        <select class="js-source-states-2 form-group" multiple="multiple" name="known_languages[]" style="width: 100%">
+                                        <select class="js-source-states-2 form-group" multiple="multiple" name="known_languages[]" required="required" style="width: 100%">
                                             @foreach ($LA as $la)
                                             <option value="{!! $la->title !!}">{!! $la->title !!}</option>
                                             @endforeach
@@ -249,42 +206,71 @@
                                             <div class="checkbox checkbox-success">
                                                 <input id="checkbox1" type="checkbox" required="required">
                                                 <label for="checkbox1">
-                                                 <b>I agree</b>
-                                             </label>
-                                         </div>
-                                         <hr>
+                                                   <b>I agree</b>
+                                               </label>
+                                           </div>
+                                           <hr>
 
 
-                                         <!-- Modal -->
-                                         <div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                          <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                              <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <h4 class="modal-title" id="myModalLabel">Terms and conditions</h4>
+                                           <!-- Modal -->
+                                           <div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Terms and conditions</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <p class="form-terms">
+                                                    Vestibulum porttitor quam eu ligula venenatis pellentesque. Nulla facilisi. Aliquam feugiat orci et odio lobortis, vel fringilla quam laoreet. Proin congue dolor sed justo vehicula, in mollis erat porta. Ut eget lorem aliquam, dignissim tortor sed, sollicitudin leo. Integer sem eros, luctus non erat eu, convallis ultrices ipsum. Donec ut porttitor ex. Aliquam non felis at felis varius rutrum. Sed accumsan enim et viverra pulvinar. Pellentesque magna risus, posuere et auctor consectetur, accumsan eget augue. Aliquam id interdum nulla. Praesent congue nulla sit amet libero rhoncus, non tincidunt lectus tempor. Vestibulum eu eros lacus. Praesent lacinia mauris finibu.
+                                                </p>
                                             </div>
-                                            <div class="modal-body">
-                                              <p class="form-terms">
-                                                Vestibulum porttitor quam eu ligula venenatis pellentesque. Nulla facilisi. Aliquam feugiat orci et odio lobortis, vel fringilla quam laoreet. Proin congue dolor sed justo vehicula, in mollis erat porta. Ut eget lorem aliquam, dignissim tortor sed, sollicitudin leo. Integer sem eros, luctus non erat eu, convallis ultrices ipsum. Donec ut porttitor ex. Aliquam non felis at felis varius rutrum. Sed accumsan enim et viverra pulvinar. Pellentesque magna risus, posuere et auctor consectetur, accumsan eget augue. Aliquam id interdum nulla. Praesent congue nulla sit amet libero rhoncus, non tincidunt lectus tempor. Vestibulum eu eros lacus. Praesent lacinia mauris finibu.
-                                            </p>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
+
+
+                                {!! Form::submit('Submit!', array('class' => 'btn btn-default btn-md ')); !!}
                             </div>
-
-
-                            {!! Form::submit('Submit!', array('class' => 'btn btn-default btn-md ')); !!}
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
+    </div><!--//row-->
+
+</div><!-- contact-form-inner -->
+
+<div class="col-md-4 col-sm-12 col-xs-12">
+
+    <div class="jumbotron">
+        <div class="container" >
+            <p class="text-center">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. in mollis erat porta. Ut eget lorem aliquam, dignissim
+            </p>
+            <span class="card"><a class="btn btn-cta btn-cta-secondary" href="about">Our team</a>
+</span>
+        </div>
     </div>
 
+    
 
-</div><!--//row-->
+
 </div>
+
+
+
+{{-- <div class="col-md-4 col-sm-12 col-xs-12  col-sm-offset-0 xs-offset-0">
+
+   <img src="images/phot/contact-1.png" class="img-responsive">
+
+</div> --}}
+
+
+
 </div><!--//row-->
 <div id="form-messages"></div>
 </form><!--//contact-form-->
@@ -387,7 +373,7 @@
 
     <script type="text/javascript" src="assets/js/main.js"></script>
 
-{{--  --}}
+    {{--  --}}
 
 
     <script src="vendor/iCheck/icheck.min.js"></script>
@@ -441,7 +427,7 @@
         $(".js-source-states-2").select2();
     </script>
 
-{{--  --}}
+    {{--  --}}
 
 
 
