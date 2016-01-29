@@ -35,24 +35,24 @@ class LanguagesAvailableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {  
-       $LA = LanguageAvailable::where('active', 1)
-               ->orderBy('name', 'asc')               
-               ->get();
+     public function create()
+     {  
+         $LA = LanguageAvailable::where('active', 1)
+         ->orderBy('name', 'asc')               
+         ->get();
         //Country Directory
-        $CD = CountryDirectory::all() ;
+         $CD = CountryDirectory::all() ;
         //Country Directory
-        $LF = LanguageFamily::all();  
-       return view('administration.settings.languages_available.create',
-        ['LA' => $LA,
-         'CD' => $CD,
-         'LF' => $LF
-          ]);
-    }
+         $LF = LanguageFamily::all();  
+         return view('administration.settings.languages_available.create',
+            ['LA' => $LA,
+            'CD' => $CD,
+            'LF' => $LF
+            ]);
+     }
 
 
-   
+
 
     /**
      * Store a newly created resource in storage.
@@ -62,28 +62,41 @@ class LanguagesAvailableController extends Controller
      */
     public function store(Request $request)
     {
-                $LA = new LanguageAvailable;
-                $LA->name = $request->input('name');
-                $LA->title = $request->input('title');      
-                $LA->patch_image = $request->input('patch_image');
-                $LA->iso_code = $request->input('iso_code');        
-                $LA->language_family = $request->input('family');
+        $LA = new LanguageAvailable;
+        $LA->name = $request->input('name');
+        $LA->title = $request->input('title');      
+        $LA->patch_image = $request->input('patch_image');
+        $LA->iso_code = $request->input('iso_code');        
+        $LA->language_family = $request->input('family');
                 //$tl = $request->input('target_languages');        
-                $target_languages = $request->input('target_languages');
-                $target_languages= json_encode($target_languages);
-                $LA->target_languages = $target_languages;
-                $LA->active='0';
+        $target_languages = $request->input('target_languages');
+        $target_languages= json_encode($target_languages);
+        $LA->target_languages = $target_languages;
+        $LA->active='0';
 
-                    $LA->save();
+        $LA->save();
 
-                $LA = LanguageAvailable::where('active', 1)
-                ->orderBy('name', 'asc')               
-                ->get();
+        // Languages Available
+        $LA   = LanguageAvailable::where('active', 1)
+        ->orderBy('name', 'asc')               
+        ->get();
+        $lang = LanguageAvailable::find($id);
+        //Country Directory
+        $CD = CountryDirectory::all() ;  
+        //Country Directory
+        $LF = LanguageFamily::all();  
+        
+        $targets= $lang->target_languages;
+        $targets = json_decode($targets);  
+        return view('administration.settings.languages_available.edit',
+            [
+            'lang'    =>$lang,
+            'LA'      =>$LA,
+            'CD'      =>$CD,  //Country Directory
+            'LF'      =>$LF,  //Language Family Directory
+            'targets' =>$targets
+            ]);
 
-                //Country Directory
-                $CD = CountryDirectory::all() ;   
-                return redirect()->back()->with('LA', $LA);
-        		
     }
 
     /**
@@ -94,7 +107,7 @@ class LanguagesAvailableController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -107,8 +120,8 @@ class LanguagesAvailableController extends Controller
     {   
         // Languages Available
         $LA   = LanguageAvailable::where('active', 1)
-                ->orderBy('name', 'asc')               
-                ->get();
+        ->orderBy('name', 'asc')               
+        ->get();
         $lang = LanguageAvailable::find($id);
         //Country Directory
         $CD = CountryDirectory::all() ;  
@@ -136,27 +149,29 @@ class LanguagesAvailableController extends Controller
      */
     public function update(Request $request, $id)
     {
-                $LA = LanguageAvailable::find($id);
-                $LA->name = $request->input('name');
-                $LA->title = $request->input('title');      
-                $LA->patch_image = $request->input('patch_image');
-                $LA->iso_code = $request->input('iso_code');        
-                $LA->language_family = $request->input('family');
+        $LA = LanguageAvailable::find($id);
+        $LA->name = $request->input('name');
+        $LA->title = $request->input('title');      
+        $LA->patch_image = $request->input('patch_image');
+        $LA->iso_code = $request->input('iso_code');        
+        $LA->language_family = $request->input('family');
                 //$tl = $request->input('target_languages');        
-                $target_languages = $request->input('target_languages');
-                $target_languages= json_encode($target_languages);
-                $LA->target_languages = $target_languages;
-                $LA->active=$request->input('state');;
+        $target_languages = $request->input('target_languages');
+        $target_languages= json_encode($target_languages);
+        $LA->target_languages = $target_languages;
+        $LA->active=$request->input('state');;
 
-                    $LA->save();
+        $LA->save();       
 
-                $LA = LanguageAvailable::where('active', 1)
-                ->orderBy('name', 'asc')               
-                ->get();
+        $tt=json_decode($target_languages);
+        
+        return $tt;
+        
+        
 
-                //Country Directory
-                $CD = CountryDirectory::all() ;   
-                return redirect()->back()->with('LA', $LA);
+
+
+
     }
 
     /**
