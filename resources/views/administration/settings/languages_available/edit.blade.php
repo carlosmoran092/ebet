@@ -85,13 +85,13 @@
    @if (count($targets)>0)
    @foreach ($targets as $target)
    <?php $target = json_decode($target); ?>
-   <option value='{"id":"{!!$target->id!!}","title" : "{!!$target->title!!}", "image":"{!!$target->image!!}"}' selected="selected">{!!$target->title!!}</option> 
+   <option value='["id":"{!!$target->id!!}","title" : "{!!$target->title!!}", "image":"{!!$target->image!!}"]' selected="selected">{!!$target->title!!}</option> 
    @endforeach
    @endif
 
 
    @foreach ($LA as $la)                              
-   <option value='{"id":"{!!$la->id!!}","title" : "{!!$la->title!!}", "image":"{!!$la->patch_image!!}"}'>{!!$la->title!!}</option>                    
+   <option value='["id":"{!!$la->id!!}","title" : "{!!$la->title!!}", "image":"{!!$la->patch_image!!}"]'>{!!$la->title!!}</option>                    
    @endforeach
 
 

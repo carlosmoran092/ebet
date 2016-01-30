@@ -87,13 +87,13 @@
    <?php if(count($targets)>0): ?>
    <?php foreach($targets as $target): ?>
    <?php $target = json_decode($target); ?>
-   <option value='{"id":"<?php echo $target->id; ?>","title" : "<?php echo $target->title; ?>", "image":"<?php echo $target->image; ?>"}' selected="selected"><?php echo $target->title; ?></option> 
+   <option value='["id":"<?php echo $target->id; ?>","title" : "<?php echo $target->title; ?>", "image":"<?php echo $target->image; ?>"]' selected="selected"><?php echo $target->title; ?></option> 
    <?php endforeach; ?>
    <?php endif; ?>
 
 
    <?php foreach($LA as $la): ?>                              
-   <option value='{"id":"<?php echo $la->id; ?>","title" : "<?php echo $la->title; ?>", "image":"<?php echo $la->patch_image; ?>"}'><?php echo $la->title; ?></option>                    
+   <option value='["id":"<?php echo $la->id; ?>","title" : "<?php echo $la->title; ?>", "image":"<?php echo $la->patch_image; ?>"]'><?php echo $la->title; ?></option>                    
    <?php endforeach; ?>
 
 

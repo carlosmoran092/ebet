@@ -69,4 +69,9 @@ class WebsiteController extends Controller
     {
         return view('website.about.index');
     }
+    public function go_translation()
+    {
+        $LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
+        return view('website.aplication.index')->with('LA',$LA);;
+    }
 }

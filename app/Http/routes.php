@@ -39,7 +39,7 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
  Route::get('home','WebsiteController@index');
  Route::get('about','WebsiteController@about');
  Route::get('join','WebsiteController@join');
- Route::get('go','WebsiteController@go');
+ Route::get('go_translation','WebsiteController@go_translation');
  Route::post('join','WebsiteController@store');
  Route::get('contact','WebsiteController@contact');
 
