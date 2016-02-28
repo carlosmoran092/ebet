@@ -19,12 +19,12 @@
     
     <hr>
     {{-- <form action="languages_submit" method="get" accept-charset="utf-8"> --}}
-    {!! Form::open(array('action' => array('Settings\LanguagesAvailableController@update',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)) !!}
+    {!! Form::open(array('action' => array('Settings\LanguagesAvailableController@updateTargetLanguages',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)) !!}
 
 
     {!! Form::hidden('type', 'languages_available'); !!}
     {{--  --}}
-    <div class="col-md-5 form-text-add">
+    <div class="col-md-6 form-text-add">
 
       <div class="form-group col-lg-12">
         <label>Title</label>
@@ -80,30 +80,15 @@
 
    <div class="form-group  col-lg-12">
     <label>Translation into other</label>
-    <select class="js-source-states-2 form-group" multiple="multiple" multiple name="target_languages[]" style="width: 100%">
-
-   @if (count($targets)>0)
-   @foreach ($targets as $target)
-   <?php $target = json_decode($target); ?>
-   <option value='["id":"{!!$target->id!!}","title" : "{!!$target->title!!}", "image":"{!!$target->image!!}"]' selected="selected">{!!$target->title!!}</option> 
-   @endforeach
-   @endif
-
-
-   @foreach ($LA as $la)                              
-   <option value='["id":"{!!$la->id!!}","title" : "{!!$la->title!!}", "image":"{!!$la->patch_image!!}"]'>{!!$la->title!!}</option>                    
-   @endforeach
-
-
-
   
 
- </select>
-</div>
+{!! HTML::link('settings/rates_language/'.$lang->id.'/edit', 'Rates for '.$lang->title.' ',['class'=>'btn btn-block btn-default','data-toggle'=>'modal','data-target'=>'#modal_lang_available','data-backdrop'=>'static','data-keyboard'=>'false']); !!}
+    
+ </div>
 
 
 
-<div class="form-group">
+ <div class="form-group">
   {!! Form::submit('UPDATE', array('class' => 'btn btn-sm btn-default')); !!}
 </div>
 
@@ -111,13 +96,13 @@
 {{--  --}}
 {!! Form::close() !!}
 {{--  --}}
-<div class="col-md-7 list-lang-add">
-  <table class="table table-striped table-condensed congif-languages">                
+<div class="col-md-5 list-lang-add">
+  <table class="table table-condensed table-hover congif-languages">                
     <thead>
       <tr>
-        <th width="50%">Languages</th>
-        <th>Target Languages</th>
-        <th>Actions</th>
+        <th width="60%">Languages</th>        
+        <th></th>
+
       </tr>
     </thead>
     <tbody>
@@ -125,10 +110,9 @@
       @foreach ($LA as $la)
       <tr><td>
         <?php echo HTML::image('images/small/'.$la->patch_image.'.png') ?> {!! $la->title !!}</td>
+       <td> 
 
-        <td> 
 
-          {!! HTML::link('settings/rates_language/'.$la->id.'/edit', 'rates',['class'=>'btn btn-xs btn-default','data-toggle'=>'modal','data-target'=>'#myModal','data-backdrop'=>'static','data-keyboard'=>'false']); !!}
         </td>
         <td>
           {!! HTML::link('settings/languages_available/'.$la->id.'/edit', 'Edit',['class'=>'btn btn-xs btn-default']); !!}
@@ -147,7 +131,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modal_lang_available" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -171,7 +155,9 @@
 {!! HTML::script('vendor/nicescroll/jquery.nicescroll.min.js') !!}
 
 <script>
-  $(document).ready(  function() {  $(".list-lang-add").niceScroll();  });
+  $(document).ready(  function() {
+    $(".list-lang-add").niceScroll();
+  });
 </script>
 
 

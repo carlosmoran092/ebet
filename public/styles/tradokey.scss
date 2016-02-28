@@ -7,33 +7,51 @@
 }
 
 .four-main{margin-top:30px; flex-direction:column;justify-content:center;align-items: center;
-align-items: center; 
+	align-items: center; 
 	
 }
 .four-i{
-i{font-size: 55px}}
-.fout-title{font-family:Roboto,Arial; color:#555555;}
+	i{font-size: 55px}}
+	.fout-title{font-family:Roboto,Arial; color:#555555;}
 
-.four-main{background: #FFFFFF;}
+	.four-main{background: #FFFFFF;}
 
-.section-paragraph{color: #cccccc; font-family:Roboto,Arial; }
+	.section-paragraph{color: #cccccc; font-family:Roboto,Arial; }
 
-.go_aplication{margin-top:30px;}
+	.go_aplication{margin-top:30px;}
 
-.opt-aplication{padding-top:30px; padding-bottom:20px;
->button{margin-left:20px;} >button:hover{color:#ffffff;} >button:click{color:#ffffff}
-}
+	.opt-aplication{padding-top:30px; padding-bottom:20px;
+		>button{margin-left:20px;} >button:hover{color:#ffffff;} >button:click{color:#ffffff}
+		> div > ul > li > input{text-align: right;}
 
-.type_service{font-size:18px; font-family:Arial,Helvetica}
-.q-service{border:1px solid #ffffff; font-size:13px;border-radius:5px;
+	}
+	.input-doc{text-align:right;}
+
+	.type_service{font-size:18px; font-family:Arial,Helvetica}
+/*.q-service{border:1px solid #ffffff; font-size:13px;border-radius:5px;
 thead>tr>th{padding:10px 20px 10px 5px; font-size:16px; font-family:Roboto,Helvetica,Arial;}
-thead>tr>th:nth-child(1){border-top-left-radius:16px;border-color:#ffffff; text-align:center;}
-thead>tr>th:nth-child(2){border-top-right-radius:16px;border-color:#ffffff; text-align:center;}
+thead>tr>th:nth-child(1){border-top-left-radius:12px;border-color:#ffffff; text-align:center;}
+thead>tr>th:nth-child(2){border-top-right-radius:12px;border-color:#ffffff; text-align:center;}
 thead{background:#3894DB; color:#ffffff;}
 tr>td:nth-child(2){color:red; text-align:right;}
-}
+}*/
 .list-aplication{
 	li>button{background:none; border: 1px solid #cccccc;}
 	li>button>i{color:#555555;}
 }
-.rate-aplication{border:1px solid #ccc; padding:10px 10px 10px 10px; margin-bottom:10px;}
+.rate-aplication{border:1px solid #ccc; padding:8px 10px 8px 10px; margin-bottom:10px;
+	>span:nth-child(3){text-align:left;}
+	>span:nth-child(3)>span{opacity:0.4;}
+}
+
+/**/
+
+.list-rate{ padding:0px;
+	>div>span:nth-child(1){font-weight:500;padding-left:20px;}
+	>div>span:first-child{font-size: 15px}
+	>div{padding:9px 5px 9px 5px; border:1px solid #cccccc}
+	>div:nth-child(2n+1){border-top:0px; border-bottom:0px; background:#fafafa;}
+	>div:last-child{margin-bottom: 20px;}
+	>div:nth-child(1){background:#3894DB;color:#ffffff;padding:15px 0px 15px 0px;}
+	>div>span:nth-child(2){text-align:right; font-weight:500;}
+}

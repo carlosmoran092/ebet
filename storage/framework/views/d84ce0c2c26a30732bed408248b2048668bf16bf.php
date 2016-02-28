@@ -19,14 +19,14 @@
     
     <hr>
     <?php /* <form action="languages_submit" method="get" accept-charset="utf-8"> */ ?>
-    <?php echo Form::open(array('action' => array('Settings\LanguagesAvailableController@update',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)); ?>
+    <?php echo Form::open(array('action' => array('Settings\LanguagesAvailableController@updateTargetLanguages',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)); ?>
 
 
 
     <?php echo Form::hidden('type', 'languages_available');; ?>
 
     <?php /*  */ ?>
-    <div class="col-md-5 form-text-add">
+    <div class="col-md-6 form-text-add">
 
       <div class="form-group col-lg-12">
         <label>Title</label>
@@ -82,30 +82,16 @@
 
    <div class="form-group  col-lg-12">
     <label>Translation into other</label>
-    <select class="js-source-states-2 form-group" multiple="multiple" multiple name="target_languages[]" style="width: 100%">
-
-   <?php if(count($targets)>0): ?>
-   <?php foreach($targets as $target): ?>
-   <?php $target = json_decode($target); ?>
-   <option value='["id":"<?php echo $target->id; ?>","title" : "<?php echo $target->title; ?>", "image":"<?php echo $target->image; ?>"]' selected="selected"><?php echo $target->title; ?></option> 
-   <?php endforeach; ?>
-   <?php endif; ?>
-
-
-   <?php foreach($LA as $la): ?>                              
-   <option value='["id":"<?php echo $la->id; ?>","title" : "<?php echo $la->title; ?>", "image":"<?php echo $la->patch_image; ?>"]'><?php echo $la->title; ?></option>                    
-   <?php endforeach; ?>
-
-
-
   
 
- </select>
-</div>
+<?php echo HTML::link('settings/rates_language/'.$lang->id.'/edit', 'Rates for '.$lang->title.' ',['class'=>'btn btn-block btn-default','data-toggle'=>'modal','data-target'=>'#modal_lang_available','data-backdrop'=>'static','data-keyboard'=>'false']);; ?>
+
+    
+ </div>
 
 
 
-<div class="form-group">
+ <div class="form-group">
   <?php echo Form::submit('UPDATE', array('class' => 'btn btn-sm btn-default'));; ?>
 
 </div>
@@ -115,13 +101,13 @@
 <?php echo Form::close(); ?>
 
 <?php /*  */ ?>
-<div class="col-md-7 list-lang-add">
-  <table class="table table-striped table-condensed congif-languages">                
+<div class="col-md-5 list-lang-add">
+  <table class="table table-condensed table-hover congif-languages">                
     <thead>
       <tr>
-        <th width="50%">Languages</th>
-        <th>Target Languages</th>
-        <th>Actions</th>
+        <th width="60%">Languages</th>        
+        <th></th>
+
       </tr>
     </thead>
     <tbody>
@@ -129,10 +115,8 @@
       <?php foreach($LA as $la): ?>
       <tr><td>
         <?php echo HTML::image('images/small/'.$la->patch_image.'.png') ?> <?php echo $la->title; ?></td>
+       <td> 
 
-        <td> 
-
-          <?php echo HTML::link('settings/rates_language/'.$la->id.'/edit', 'rates',['class'=>'btn btn-xs btn-default','data-toggle'=>'modal','data-target'=>'#myModal','data-backdrop'=>'static','data-keyboard'=>'false']);; ?>
 
         </td>
         <td>
@@ -153,7 +137,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modal_lang_available" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -178,7 +162,9 @@
 
 
 <script>
-  $(document).ready(  function() {  $(".list-lang-add").niceScroll();  });
+  $(document).ready(  function() {
+    $(".list-lang-add").niceScroll();
+  });
 </script>
 
 

@@ -42,34 +42,23 @@
     color: #ffffff; }
   .opt-aplication > button:click {
     color: #ffffff; }
+  .opt-aplication > div > ul > li > input {
+    text-align: right; }
+
+.input-doc {
+  text-align: right; }
 
 .type_service {
   font-size: 18px;
   font-family: Arial,Helvetica; }
 
-.q-service {
-  border: 1px solid #ffffff;
-  font-size: 13px;
-  border-radius: 5px; }
-  .q-service thead > tr > th {
-    padding: 10px 20px 10px 5px;
-    font-size: 16px;
-    font-family: Roboto,Helvetica,Arial; }
-  .q-service thead > tr > th:nth-child(1) {
-    border-top-left-radius: 16px;
-    border-color: #ffffff;
-    text-align: center; }
-  .q-service thead > tr > th:nth-child(2) {
-    border-top-right-radius: 16px;
-    border-color: #ffffff;
-    text-align: center; }
-  .q-service thead {
-    background: #3894DB;
-    color: #ffffff; }
-  .q-service tr > td:nth-child(2) {
-    color: red;
-    text-align: right; }
-
+/*.q-service{border:1px solid #ffffff; font-size:13px;border-radius:5px;
+thead>tr>th{padding:10px 20px 10px 5px; font-size:16px; font-family:Roboto,Helvetica,Arial;}
+thead>tr>th:nth-child(1){border-top-left-radius:12px;border-color:#ffffff; text-align:center;}
+thead>tr>th:nth-child(2){border-top-right-radius:12px;border-color:#ffffff; text-align:center;}
+thead{background:#3894DB; color:#ffffff;}
+tr>td:nth-child(2){color:red; text-align:right;}
+}*/
 .list-aplication li > button {
   background: none;
   border: 1px solid #cccccc; }
@@ -78,7 +67,36 @@
 
 .rate-aplication {
   border: 1px solid #ccc;
-  padding: 10px 10px 10px 10px;
+  padding: 8px 10px 8px 10px;
   margin-bottom: 10px; }
+  .rate-aplication > span:nth-child(3) {
+    text-align: left; }
+  .rate-aplication > span:nth-child(3) > span {
+    opacity: 0.4; }
+
+/**/
+.list-rate {
+  padding: 0px; }
+  .list-rate > div > span:nth-child(1) {
+    font-weight: 500;
+    padding-left: 20px; }
+  .list-rate > div > span:first-child {
+    font-size: 15px; }
+  .list-rate > div {
+    padding: 9px 5px 9px 5px;
+    border: 1px solid #cccccc; }
+  .list-rate > div:nth-child(2n+1) {
+    border-top: 0px;
+    border-bottom: 0px;
+    background: #fafafa; }
+  .list-rate > div:last-child {
+    margin-bottom: 20px; }
+  .list-rate > div:nth-child(1) {
+    background: #3894DB;
+    color: #ffffff;
+    padding: 15px 0px 15px 0px; }
+  .list-rate > div > span:nth-child(2) {
+    text-align: right;
+    font-weight: 500; }
 
 /*# sourceMappingURL=tradokey.css.map */

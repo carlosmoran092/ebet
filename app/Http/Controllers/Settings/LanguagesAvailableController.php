@@ -8,7 +8,7 @@ use App\Models\Directories\CountryDirectory;
 use App\Models\Directories\LanguageFamily;
 
 use Validator;
-
+use DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,11 +16,6 @@ use App\Http\Controllers\Controller;
 class LanguagesAvailableController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function index()
     {
@@ -155,24 +150,46 @@ class LanguagesAvailableController extends Controller
         $LA->patch_image = $request->input('patch_image');
         $LA->iso_code = $request->input('iso_code');        
         $LA->language_family = $request->input('family');
-                //$tl = $request->input('target_languages');        
-        $target_languages = $request->input('target_languages');
-        $target_languages= json_encode($target_languages);
-        $LA->target_languages = $target_languages;
+        //$LA->target_languages = $target_languages;
         $LA->active=$request->input('state');;
 
         $LA->save();       
 
         $tt=json_decode($target_languages);
         
-        return $tt;
-        
-        
-
-
-
-
+        return $tt;    
     }
+
+ /***
+ // Function Update Target Language [ format JSON ]
+ **/
+ public function updateTargetLanguages(Request $request, $id)
+ {
+    $LA = LanguageAvailable::find($id);    
+    $data_json = $request->input();
+
+     $LA->target_languages =  $data_json ;     
+     $LA->save();
+    // return false;
+
+    //return $data_json;
+
+}
+
+/***
+// Function get target language
+**/
+
+public function getTarget($id)
+{
+    //$results = DB::select('select target_languages from language_availables where id = :id', ['id' => $id]);
+
+    $results = $LA = LanguageAvailable::find($id);
+    $value = $results->target_languages;
+    $cad= explode(" ", $value);
+    return var_dump($value);
+    
+}
 
     /**
      * Remove the specified resource from storage.

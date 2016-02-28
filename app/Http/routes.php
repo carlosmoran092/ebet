@@ -1,5 +1,10 @@
 <?php
 
+Route::get('test', function () {
+    return view('test');
+});
+
+
 
 Route::resource('customers', 'CustomersController');
 
@@ -58,6 +63,8 @@ Settings Options
 
 Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settings'], function()
 {
+
+
 	Route::get('/', [
         'as'   => 'languages_available.index', 
         'uses' => 'LanguagesAvailableController@index'
@@ -82,6 +89,15 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
         'as'   => 'languages_available.update', 
         'uses' => 'LanguagesAvailableController@update'
         ]);
+    Route::post('{id}/update_target', [
+        'as'   => 'languages_available.updateTargetLanguages', 
+        'uses' => 'LanguagesAvailableController@updateTargetLanguages'
+        ]);
+    Route::get('{id}/get_target', [
+        'as'   => 'languages_available.getTarget', 
+        'uses' => 'LanguagesAvailableController@getTarget'
+        ]);
+
 });
 
 
@@ -99,7 +115,7 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
 
     Route::group(['prefix' => 'settings/rates_language', 'namespace' => 'Settings'], function()
     {
-       Route::auth();
+
 
        Route::get('{id}/edit', [
         'as'   => 'rates_language.edit', 
@@ -109,6 +125,11 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
        Route::get('/', [
         'as'   => 'rates_language.index', 
         'uses' => 'RateLanguageController@index'
+        ]);
+
+       Route::get('/getalllanguages', [
+        'as'   => 'rates_language.index', 
+        'uses' => 'RateLanguageController@getAllLanguages'
         ]);
 
        Route::put('{id}', [

@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+.container-post {
+  background: #fffffff;
+  font-family: 'Lora', serif;
+  padding: 30px 37px 35px 37px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px; }
+
+.container-single-post {
+  background: #fffffff;
+  font-family: 'Lora', serif;
+  padding: 32px 37px 35px 37px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px; }
+
+.crms-title {
+  font-family: 'Lora','PT Sans Narrow', sans-serif;
+  font-size: 55px;
+  color: #ffffff;
+  margin-bottom: 60px;
+  padding-bottom: 15px;
+  text-shadow: 2px 1px 5px #222222;
+  font-weight: 200; }
+
+.title-blog {
+  font-family: 'Lora', serif;
+  font-weight: 500; }
+
+.cmrs-article {
+  font-family: 'Lora', serif; }
+
+/*# sourceMappingURL=main.css.map */
