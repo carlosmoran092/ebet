@@ -22673,3 +22673,6 @@ Stack trace:
 #25 C:\xampp\htdocs\test\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #26 C:\xampp\htdocs\test\public\index.php(66): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #27 {main}  
+[2016-02-28 16:23:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 30 seconds exceeded' in C:\xampp\htdocs\test\vendor\laravel\framework\src\Illuminate\Http\ResponseTrait.php:6
+Stack trace:
+#0 {main}  

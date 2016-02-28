@@ -120,14 +120,10 @@
 
 			function loadSelects(){
 				for (var i = 0; i < data.length; i++) {
-					$('select:last').append('<option data-id="'+data[i].id+'">'+data[i].title+'</option>');
+					$('select:last').append('<option value="'+data[i].title+','+data[i].patch_image+'" data-id="'+data[i].id+'" >'+data[i].title+'</option>');
+				// 
 				};
 			}
-
-
-
-
-
 /*
 Modal
 */
@@ -156,9 +152,14 @@ function setRates (){
 
 		item_rate = new Object();
 
-		item_rate.title =  $("select.language-name:nth("+i+")").val();
+		/* title_and_img */
+		valueSelect = $('select.language-name:nth('+i+')').val();
+		tai = valueSelect.split(",");
+
+		item_rate.title =  tai[0];
+		item_rate.image =  tai[1]; 
 		item_rate.rate  =  parseFloat( $("input.language-rate-value:nth("+i+")").val());
-		
+		/* Save item */
 		new_data.push(item_rate);
 
 		
