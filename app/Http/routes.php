@@ -1,7 +1,7 @@
 <?php
 
 Route::get('test', function () {
-    return view('test');
+    return view('website.aplication.index');
 });
 
 

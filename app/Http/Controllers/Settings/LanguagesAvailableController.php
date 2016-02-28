@@ -155,9 +155,9 @@ class LanguagesAvailableController extends Controller
 
         $LA->save();       
 
-        $tt=json_decode($target_languages);
+        //$tt=json_decode($target_languages);
         
-        return $tt;    
+        return $LA;    
     }
 
  /***

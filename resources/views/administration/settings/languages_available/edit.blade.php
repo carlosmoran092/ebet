@@ -19,7 +19,7 @@
     
     <hr>
     {{-- <form action="languages_submit" method="get" accept-charset="utf-8"> --}}
-    {!! Form::open(array('action' => array('Settings\LanguagesAvailableController@updateTargetLanguages',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)) !!}
+    {!! Form::open(array('action' => array('Settings\LanguagesAvailableController@update',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)) !!}
 
 
     {!! Form::hidden('type', 'languages_available'); !!}
