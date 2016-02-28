@@ -166,10 +166,14 @@ class LanguagesAvailableController extends Controller
  public function updateTargetLanguages(Request $request, $id)
  {
     $LA = LanguageAvailable::find($id);    
-    $data_json = $request->input();
+    $data_json = $request->input('json_new_data');
 
-     $LA->target_languages =  $data_json ;     
+     $LA->target_languages =stripslashes( json_encode($data_json,true));  
+     //$LA->target_languages = substr($LA->target_languages,1);   
+     $del = count($LA->target_languages);
      $LA->save();
+
+     var_dump( $LA->target_languages);
     // return false;
 
     //return $data_json;
