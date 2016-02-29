@@ -93,11 +93,11 @@
                   </div>
                   <!--  -->
                   <div class="form-group  col-lg-5">
-                    <label>Add expert</label>
+                    <label><i class="icon-person"></i> Add expert</label>
                     <select class="js-source-states-2 form-group"  name="initial" required="required" style="width: 100%">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                      <option>IT and Telecommunications</option>
+                      <option>Academic</option>
+                      <option>Medical</option>
                       <option>4</option>
                       <option>5</option>
 
@@ -105,7 +105,7 @@
                   </div>
 
                   <div class="form-group  col-lg-7">
-                    <label>Delivery Type</label>
+                    <label><i class="icon-docs-1"></i> Delivery Type</label>
                     <select class="js-source-states-2 form-group"  name="initial" required="required" style="width: 100%">
                       <option>Keep original style and format</option>
                       <option>2</option>
@@ -142,145 +142,177 @@
                   </div>
                 </section>
 
-
-
                 <section class="col-md-5 go_aplication">
-
 
                   <br>
 
 
                   <div class="rate-aplication col-md-12">
                     <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   Text translation and proofreading</h5>
+                      <h5><i class="icon-heart-empty"></i> Text translation and proofreading</h5>
                     </span>  
                     <span class="col-md-3 text-right">
-                       0
-                    </span>
-                  </div>
+                     0<i class="icon-dollar-1"></i>
+                   </span>
+                 </div>
 
 
-                  <div class="rate-aplication col-md-12">
-                    <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   Expert Medic</h5>
-                    </span>  
-                    <span class="col-md-3 text-right">
-                       0.010
-                    </span>
-                  </div>
+                 <div class="rate-aplication col-md-12">
+                  <span class="col-md-9 col-sm-9 col-xs-9">
+                    <h5><i class="icon-person"></i> Expert Medic</h5>
+                  </span>  
+                  <span class="col-md-3 text-right">
+                   0.010<i class="icon-dollar-1"></i>
+                 </span>
+               </div>
 
-                  <div class="rate-aplication col-md-12">
-                    <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   Keep original style and format</h5>
-                    </span>  
-                    <span class="col-md-3 text-right">
-                       0
-                    </span>
-                  </div>
+               <div class="rate-aplication col-md-12">
+                <span class="col-md-9 col-sm-9 col-xs-9">
+                  <h5>  <i class="icon-docs-1"></i>   Keep original style and format</h5>
+                </span>  
+                <span class="col-md-3 text-right">
+                 0<i class="icon-dollar-1"></i>
+               </span>
+             </div>
 
-
-                  <div class="rate-aplication col-md-12">
-                    <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Armenia.png" width="20" alt=""> Armenian</h5>
-                    </span>  
-                    <span class="col-md-3 text-right">
-                       0.070
-                    </span>
-                  </div>
-
-                  <div class="rate-aplication col-md-12">
-                    <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Albania.png" width="20" alt=""> Albanian</h5>
-                    </span>  
-                    <span class="col-md-3 text-right">
-                       0.070
-                    </span>
-                  </div>
-
-                  <div class="rate-aplication col-md-12">
-                    <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   Total Words <i class="icon-right-1"></i></h5>
-                    </span>  
-                    <span class="col-md-3 text-right">
-                       1935
-                    </span>
-                  </div>
+             <div class="rate-aplication col-md-12 box-blue">
+              <span class="col-md-9 col-sm-9 col-xs-9">
+                <h5>  <i class="icon-language"></i>   Total Words <i class="icon-right-1"></i></h5>
+              </span>  
+              <span class="col-md-3 text-right">
+               1935
+             </span>
+           </div>
 
 
+           <div class="rate-aplication col-md-12">
+            <span class="col-md-9 col-sm-9 col-xs-9">
+              <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Armenia.png" width="20" alt=""> Armenian</h5>
+            </span>  
+            <span class="col-md-3 text-right">
+             0.070<i class="icon-dollar-1"></i>
+           </span>
+         </div>
 
-
-                </section>
+         <div class="rate-aplication col-md-12">
+          <span class="col-md-9 col-sm-9 col-xs-9">
+            <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Albania.png" width="20" alt=""> Albanian</h5>
+          </span>  
+          <span class="col-md-3 text-right">
+           0.070<i class="icon-dollar-1"></i>
+         </span>
+       </div>
 
 
 
 
-              </div>
-            </div><!--//row-->
-            <div id="form-messages"></div>
-          </form><!--//contact-form-->
-        </div><!--//container-->
-      </section><!--//contact-section-->
+       <div class="rate-aplication col-md-12">
+        <span class="col-md-9 col-sm-9 col-xs-9">
+          <h5>Subtotal: <img src="images/small/United States.png" width="20" alt=""> <i class="icon-right-1"></i> <img src="images/small/Armenia.png" width="20" alt=""></h5>
+        </span>  
+        <span class="col-md-3 text-right">
+         256<i class="icon-dollar-1"></i>
+       </span>
 
-    </div><!--//wrapper-->
-
-
-    @include('layouts.footer')
-
-
-    <!-- Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
-    <script type="text/javascript" src="assets/plugins/bootstrap-hover-dropdown.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
-    <script type="text/javascript" src="assets/plugins/FitVids/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script> 
-
-    <!-- contact page specific js starts -->
-    <script type="text/javascript" src="assets/plugins/jquery.validate.min.js"></script>       
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
-    <script type="text/javascript" src="assets/plugins/gmaps/gmaps.js"></script> 
-    <script type="text/javascript" src="assets/js/contact.js"></script>  
-
-    <!-- contact page specific js ends-->  
-
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script src="vendor/iCheck/icheck.min.js"></script>
-    <script src="vendor/sparkline/index.js"></script>
-    <script src="vendor/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
-    <script src="vendor/select2-3.5.2/select2.min.js"></script>
-    <script src="country-select-js-master/build/js/countrySelect.min.js"></script>
-    {!! HTML::script('vendor/jquery-word/jquery-word.min.js') !!}
-    {!! HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js') !!}
-
-    <script>
-      $("#charUp").counter({
-        count: 'up',
-        msg:'(max 600 characters)',
-        goal: 600
-      });
-
-      $('.confirm1').click(function(){
-        swal({
-          title: "Very good!",
-          text: "Thank you very much, now receive a verification email.",
-          type: "success"
-        });
-      });
+       <span class="col-md-9 col-sm-9 col-xs-9">
+        <h5>Subtotal: <img src="images/small/United States.png" width="20" alt=""> <i class="icon-right-1"></i> <img src="images/small/Albania.png" width="20" alt=""></h5>
+      </span>  
+      <span class="col-md-3 text-right">
+       256<i class="icon-dollar-1"></i>
+     </span>
 
 
-    </script>
+   </div>
 
-    <script>
-      $("#country_selector").countrySelect({
+   <div class="col-md-12 rate-aplication">
+    <div class="form-group">
+      <div class="radio radio-info radio-inline">
+        <input type="radio" id="inlineRadio1" value="male" name="gender" checked="">
+        <label for="inlineRadio1" class="text-p-orders"> Paypal </label>
+      </div>
+      <div class="radio radio-inline">
+        <input type="radio" id="inlineRadio2" value="female" name="gender">
+        <label for="inlineRadio2" class="text-p-orders"> Female </label>
+      </div>
+    </div>
+
+  </div> 
+
+
+
+
+</section>
+
+
+
+
+</div>
+</div><!--//row-->
+<div id="form-messages"></div>
+</form><!--//contact-form-->
+</div><!--//container-->
+</section><!--//contact-section-->
+
+</div><!--//wrapper-->
+
+
+@include('layouts.footer')
+
+
+<!-- Javascript -->          
+<script type="text/javascript" src="assets/plugins/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/plugins/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+<script type="text/javascript" src="assets/plugins/FitVids/jquery.fitvids.js"></script>
+<script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script> 
+
+<!-- contact page specific js starts -->
+<script type="text/javascript" src="assets/plugins/jquery.validate.min.js"></script>       
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+<script type="text/javascript" src="assets/plugins/gmaps/gmaps.js"></script> 
+<script type="text/javascript" src="assets/js/contact.js"></script>  
+
+<!-- contact page specific js ends-->  
+
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script src="vendor/iCheck/icheck.min.js"></script>
+<script src="vendor/sparkline/index.js"></script>
+<script src="vendor/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
+<script src="vendor/select2-3.5.2/select2.min.js"></script>
+<script src="country-select-js-master/build/js/countrySelect.min.js"></script>
+{!! HTML::script('vendor/jquery-word/jquery-word.min.js') !!}
+{!! HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js') !!}
+
+<script>
+  $("#charUp").counter({
+    count: 'up',
+    msg:'(max 600 characters)',
+    goal: 600
+  });
+
+  $('.confirm1').click(function(){
+    swal({
+      title: "Very good!",
+      text: "Thank you very much, now receive a verification email.",
+      type: "success"
+    });
+  });
+
+
+</script>
+
+<script>
+  $("#country_selector").countrySelect({
             //defaultCountry: "jp",
             //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
             preferredCountries: ['kr', 'gb', 'us']
           });
 
-      $("#country_selector_2").countrySelect({
+  $("#country_selector_2").countrySelect({
             //defaultCountry: "jp",
             //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
             preferredCountries: ['us']

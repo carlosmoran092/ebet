@@ -99,4 +99,8 @@ tr>td:nth-child(2){color:red; text-align:right;}
     text-align: right;
     font-weight: 500; }
 
+.box-blue {
+  color: #ffffff;
+  background: #3894db; }
+
 /*# sourceMappingURL=tradokey.css.map */
