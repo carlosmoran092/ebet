@@ -83,7 +83,7 @@ tr>td:nth-child(2){color:red; text-align:right;}
   .list-rate > div > span:first-child {
     font-size: 15px; }
   .list-rate > div {
-    padding: 9px 5px 9px 5px;
+    padding: 6px 5px 6px 5px;
     border: 1px solid #cccccc; }
   .list-rate > div:nth-child(2n+1) {
     border-top: 0px;

@@ -114,6 +114,7 @@
                       <option>5</option>
 
                     </select>
+                    <br><br>
                   </div>
 
                   <hr>
@@ -126,7 +127,7 @@
 
                    <div class="btn-group" role="group">
                     <button type="button" class="btn btn-primary">Add File</button>                   
-                    <button type="button" class="btn btn-primary">Add Text</button><br>
+                    <button type="button" class="btn btn-primary">Add Text</button><br><br>
                   </div>
 
                   <ul class="list-group list-aplication">
@@ -226,13 +227,27 @@
 
    <div class="col-md-12 rate-aplication">
     <div class="form-group">
+<label><i class="icon-credit-card-4"></i> Payment Method</label><br>
+
       <div class="radio radio-info radio-inline">
-        <input type="radio" id="inlineRadio1" value="male" name="gender" checked="">
+        <input type="radio" id="inlineRadio1" value="paypal" name="
+        payment" checked="">
         <label for="inlineRadio1" class="text-p-orders"> Paypal </label>
       </div>
       <div class="radio radio-inline">
-        <input type="radio" id="inlineRadio2" value="female" name="gender">
-        <label for="inlineRadio2" class="text-p-orders"> Female </label>
+        <input type="radio" id="inlineRadio2" value="paysa" name="
+        payment">
+        <label for="inlineRadio2" class="text-p-orders"> Payza </label>
+      </div>
+      <div class="radio radio-danger radio-inline">
+        <input type="radio" id="inlineRadio2" value="paysa" name="
+        payment">
+        <label for="inlineRadio2" class="text-p-orders"> Visa </label>
+      </div>
+      <div class="radio radio-success radio-inline">
+        <input type="radio" id="inlineRadio2" value="paysa" name="
+        payment">
+        <label for="inlineRadio2" class="text-p-orders"> Mastercard </label>
       </div>
     </div>
 
