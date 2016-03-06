@@ -22,12 +22,13 @@
 
   {{--  --}}
 
-  <link rel="stylesheet" href="vendor/bootstrap-datepicker-master/dist/css/bootstrap-datepicker3.min.css" />
-  <link rel="stylesheet" href="vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
-  <link rel="stylesheet" href="vendor/select2-3.5.2/select2.css" />
-  <link rel="stylesheet" href="country-select-js-master\build\css\countrySelect.min.css">
-  <link rel="stylesheet" href="vendor/select2-3.5.2/select2.css" />
-  <link rel="stylesheet" href="vendor/select2-bootstrap/select2-bootstrap.css" />
+
+  {!! HTML::style('vendor/bootstrap-datepicker-master/dist/css/bootstrap-datepicker3.min.css') !!}   
+  {!! HTML::style('vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') !!}   
+  {!! HTML::style('vendor/select2-3.5.2/select2.css') !!}   
+  {!! HTML::style('country-select-js-master\build\css\countrySelect.min.css') !!}   
+  {!! HTML::style('vendor/select2-3.5.2/select2.css') !!}   
+  {!! HTML::style('vendor/select2-bootstrap/select2-bootstrap.css') !!}   
 
   {!! HTML::style('vendor/sweetalert/lib/sweet-alert.css') !!}   
   {!! HTML::style('vendor/fontawesome/css/font-awesome.css') !!}
@@ -57,7 +58,7 @@
         <!-- ******Contact Section****** --> 
         <section class="contact-section section section-on-bg">
           <div class="container">
-            <h1 class="text-center camr-tilte">Quote translation service</h1>
+            <h1 class="text-center camr-tilte">Quote Translation Service</h1>
 
             <div class="row" >
               <div style="background:#ffffff; border-radius:9px;" class="col-md-12 col-sm-12 col-xs-12  col-sm-offset-0 xs-offset-0">
@@ -108,11 +109,8 @@
                     <label><i class="icon-docs-1"></i> Delivery Type</label>
                     <select class="js-source-states-2 form-group"  name="initial" required="required" style="width: 100%">
                       <option>Keep original style and format</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-
+                      <option>Free presentation style editable format</option>
+        
                     </select>
                     <br><br>
                   </div>
@@ -227,7 +225,7 @@
 
    <div class="col-md-12 rate-aplication">
     <div class="form-group">
-<label><i class="icon-credit-card-4"></i> Payment Method</label><br>
+      <label><i class="icon-credit-card-4"></i> Payment Method</label><br>
 
       <div class="radio radio-info radio-inline">
         <input type="radio" id="inlineRadio1" value="paypal" name="

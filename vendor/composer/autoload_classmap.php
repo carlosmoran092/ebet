@@ -525,5 +525,5 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'UpdatePhoneTranslatorsTable' => $baseDir . '/database/migrations/2016_01_23_062546_update_phone_translators_table.php',
+    'UpdatePhoneSkypeTranslatorsTable' => $baseDir . '/database/migrations/2016_01_23_062546_update_phone_skype_translators_table.php',
 );

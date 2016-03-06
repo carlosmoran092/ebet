@@ -40,7 +40,12 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
 
 
 
- Route::get('/','WebsiteController@index');
+ //Route::get('/','WebsiteController@index');
+Route::get('/', function () {
+        return view('website.home.construccion');
+    });
+
+
  Route::get('home','WebsiteController@index');
  Route::get('about','WebsiteController@about');
  Route::get('join','WebsiteController@join');
@@ -136,6 +141,23 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
         'as'   => 'rate_language.update', 
         'uses' => 'RateLanguageController@update'
         ]);
+
+   });
+
+    /********************************************/
+  //  Configuration API
+    /*******************************************/
+
+        Route::group(['prefix' => 'settings/api', 'namespace' => 'Settings'], function()
+    {
+
+
+       Route::get('/', [
+        'as'   => 'serttings_api', 
+        'uses' => 'ApiController@index'
+        ]);
+
+ 
 
    });
 
