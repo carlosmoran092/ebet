@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Api\Experts;
+use App\Models\Api\Services;
+use App\Models\Api\Deliveries;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\LanguageAvailable;
@@ -13,14 +17,14 @@ class WebsiteController extends Controller
 {
     public function index()
     {
-    	
-    	return view('website.home.index');
+
+        return view('website.home.index');
     }
     public function join()
     {
-    	$LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
+        $LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
 
-    	return view("website.join.index")->with('LA',$LA);
+        return view("website.join.index")->with('LA',$LA);
     }
     public function store(Request $request)
     {
@@ -47,7 +51,7 @@ class WebsiteController extends Controller
         return($request->all());
     }
     public function worldExperts(){
-    	return view('website.services.world-experts');
+        return view('website.services.world-experts');
     }
     public function reviewProcess()
     {
@@ -71,7 +75,24 @@ class WebsiteController extends Controller
     }
     public function go_translation()
     {
+        $services = Services::all();
+        $experts = Experts::all();
+        $deliveries = Deliveries::all();
         $LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
-        return view('website.aplication.index')->with('LA',$LA);;
+        return view('website.aplication.index',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+
+
+    }
+    public function text_translation(){
+        $services = Services::all();
+        $experts = Experts::all();
+        $deliveries = Deliveries::all();
+        $LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
+        return view('website.aplication.text_translation',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+
+
+    }
+    public function text_translation_upload(Request $request){
+
     }
 }

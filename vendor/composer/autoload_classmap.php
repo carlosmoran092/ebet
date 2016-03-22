@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'CreateCountriesDirectoryTable' => $baseDir . '/database/migrations/2016_01_01_234434_create_countries_directory_table.php',
     'CreateCustomersTable' => $baseDir . '/database/migrations/2015_12_18_032435_create_customers_table.php',
+    'CreateDeliveriesTable' => $baseDir . '/database/migrations/2016_03_06_211240_create_deliveries_table.php',
+    'CreateExpertsTable' => $baseDir . '/database/migrations/2016_03_06_211141_create_experts_table.php',
     'CreateLanguageAvailablesTable' => $baseDir . '/database/migrations/2015_12_26_035508_create_language_availables_table.php',
     'CreateLanguageFamiliesTable' => $baseDir . '/database/migrations/2016_01_02_194632_create_Language_families_table.php',
     'CreateNoteOrdersTable' => $baseDir . '/database/migrations/2015_12_23_014208_create_note_orders_table.php',
@@ -16,6 +18,7 @@ return array(
     'CreateQuotationsTable' => $baseDir . '/database/migrations/2015_12_18_031948_create_quotations_table.php',
     'CreateRatesLanguageTable' => $baseDir . '/database/migrations/2016_01_03_031320_create_rates_language_table.php',
     'CreateServicesTable' => $baseDir . '/database/migrations/2015_12_18_032132_create_services_table.php',
+    'CreateSessionsTable' => $baseDir . '/database/migrations/2016_03_08_052348_create_sessions_table.php',
     'CreateStatesServiceTable' => $baseDir . '/database/migrations/2015_11_26_075330_create_states_service_table.php',
     'CreateTranslatorsTable' => $baseDir . '/database/migrations/2015_11_26_202117_create_translators_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -526,4 +529,5 @@ return array(
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'UpdatePhoneSkypeTranslatorsTable' => $baseDir . '/database/migrations/2016_01_23_062546_update_phone_skype_translators_table.php',
+    'UpdateServicesTable' => $baseDir . '/database/migrations/2016_03_06_203413_update_services_table.php',
 );

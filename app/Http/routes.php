@@ -5,6 +5,10 @@ Route::get('test', function () {
 });
 
 
+/*************************************************
+Web Site
+ *************************************************/
+
 
 Route::resource('customers', 'CustomersController');
 
@@ -41,15 +45,18 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
 
 
  //Route::get('/','WebsiteController@index');
-Route::get('/', function () {
-        return view('website.home.construccion');
-    });
+ Route::get('/', function () {
+    return view('website.home.construccion');
+});
 
 
  Route::get('home','WebsiteController@index');
  Route::get('about','WebsiteController@about');
  Route::get('join','WebsiteController@join');
  Route::get('go_translation','WebsiteController@go_translation');
+Route::get('text_translation','WebsiteController@text_translation');
+Route::post('text_translation','WebsiteController@text_translation_upload');
+
  Route::post('join','WebsiteController@store');
  Route::get('contact','WebsiteController@contact');
 
@@ -148,7 +155,7 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
   //  Configuration API
     /*******************************************/
 
-        Route::group(['prefix' => 'settings/api', 'namespace' => 'Settings'], function()
+    Route::group(['prefix' => 'settings/api', 'namespace' => 'Settings'], function()
     {
 
 
@@ -157,7 +164,25 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
         'uses' => 'ApiController@index'
         ]);
 
- 
+       Route::post('store_service',[
+        'as' => 'store_service',
+        'uses' => 'ApiController@storteService'
+        ]);
+
+       Route::post('store_expert',[
+        'as' => 'store_expert',
+        'uses' => 'ApiController@storteExpert'
+        ]);  
+
+       Route::post('store_delivery',[
+        'as' => 'store_delivery',
+        'uses' => 'ApiController@storteDelivery'
+        ]);  
+        Route::put('update_service',[
+        'as' => 'update_service',
+        'uses' => 'ApiController@UpdateService'
+        ]);  
+
 
    });
 
