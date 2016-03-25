@@ -92,7 +92,22 @@ class WebsiteController extends Controller
 
 
     }
-    public function text_translation_upload(Request $request){
+
+    public function video_audio(){
+        $services = Services::all();
+        $experts = Experts::all();
+        $deliveries = Deliveries::all();
+        $LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
+        return view('website.aplication.video_translation',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+
 
     }
+    public function website_translation(){
+        $services = Services::all();
+        $experts = Experts::all();
+        $deliveries = Deliveries::all();
+        $LA=LanguageAvailable::where('active', 1)->orderBy('name', 'asc')->get();
+        return view('website.aplication.website_translation',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+
+}
 }

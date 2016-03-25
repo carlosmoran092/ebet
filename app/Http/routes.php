@@ -57,6 +57,9 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
 Route::get('text_translation','WebsiteController@text_translation');
 Route::post('text_translation','WebsiteController@text_translation_upload');
 
+Route::get('video_audio_translation','WebsiteController@video_audio');
+Route::get('website_translation','WebsiteController@website_translation');
+
  Route::post('join','WebsiteController@store');
  Route::get('contact','WebsiteController@contact');
 

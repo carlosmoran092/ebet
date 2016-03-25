@@ -1,0 +1,71 @@
+        {{--
+                                             <div class="rate-aplication col-md-12 box-blue">
+                                              <span class="col-md-9 col-sm-9 col-xs-9">
+                                                <h5>  <i class="icon-language"></i>   Total Words <i class="icon-right-1"></i></h5>
+                                              </span>
+                                              <span class="col-md-3 text-right">
+                                               1935
+                                             </span>
+                                           </div>
+
+
+
+
+                                         <div class="rate-aplication col-md-12">
+                                          <span class="col-md-9 col-sm-9 col-xs-9">
+                                            <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Albania.png" width="20" alt=""> Albanian</h5>
+                                          </span>
+                                          <span class="col-md-3 text-right">
+                                           0.070<i class="icon-dollar-1"></i>
+                                         </span>
+                                       </div>
+
+
+
+
+                                       <div class="rate-aplication col-md-12">
+                                        <span class="col-md-9 col-sm-9 col-xs-9">
+                                          <h5>Subtotal: <img src="images/small/United States.png" width="20" alt=""> <i class="icon-right-1"></i> <img src="images/small/Armenia.png" width="20" alt=""></h5>
+                                        </span>
+                                        <span class="col-md-3 text-right">
+                                         256<i class="icon-dollar-1"></i>
+                                       </span>
+
+                                       <span class="col-md-9 col-sm-9 col-xs-9">
+                                        <h5>Subtotal: <img src="images/small/United States.png" width="20" alt=""> <i class="icon-right-1"></i> <img src="images/small/Albania.png" width="20" alt=""></h5>
+                                      </span>
+                                      <span class="col-md-3 text-right">
+                                       256<i class="icon-dollar-1"></i>
+                                     </span>
+
+
+                                   </div>
+
+                                   <div class="col-md-12 rate-aplication">
+                                    <div class="form-group">
+                                      <label><i class="icon-credit-card-4"></i> Payment Method</label><br>
+
+                                      <div class="radio radio-info radio-inline">
+                                        <input type="radio" id="inlineRadio1" value="paypal" name="
+                                        payment" checked="">
+                                        <label for="inlineRadio1" class="text-p-orders"> Paypal </label>
+                                      </div>
+                                      <div class="radio radio-inline">
+                                        <input type="radio" id="inlineRadio2" value="paysa" name="
+                                        payment">
+                                        <label for="inlineRadio2" class="text-p-orders"> Payza </label>
+                                      </div>
+                                      <div class="radio radio-danger radio-inline">
+                                        <input type="radio" id="inlineRadio2" value="paysa" name="
+                                        payment">
+                                        <label for="inlineRadio2" class="text-p-orders"> Visa </label>
+                                      </div>
+                                      <div class="radio radio-success radio-inline">
+                                        <input type="radio" id="inlineRadio2" value="paysa" name="
+                                        payment">
+                                        <label for="inlineRadio2" class="text-p-orders"> Mastercard </label>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                 --}}

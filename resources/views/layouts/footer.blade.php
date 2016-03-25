@@ -19,7 +19,7 @@
      <ul class="list-unstyled">
       <li><a href="#"><i class="fa fa-caret-right"></i>Documents Translation</a></li>
       <li><a href="#"><i class="fa fa-caret-right"></i>Video Translation</a></li>                               
-      <li><a href="#"><i class="fa fa-caret-right"></i>Service 3</a></li>
+      <li><a href="#"><i class="fa fa-caret-right"></i>Website Translation</a></li>
     </ul>
   </div><!--//footer-col-inner-->
 </div><!--//foooter-col-->              

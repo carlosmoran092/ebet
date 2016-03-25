@@ -33,9 +33,9 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Services 
                     <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                      <li>{!!HTML::link('go_translation', 'Documents translation');!!}</li>
-                      <li>{!!HTML::link('video-translation', 'Video translation');!!}</li>
-                      <li><a href="#">Service 3</a></li>
+                      <li>{!!HTML::link('text_translation', 'Documents translation');!!}</li>
+                      <li>{!!HTML::link('video_audio_translation', 'Video translation');!!}</li>
+                      <li>{!!HTML::link('website_translation', 'Website translation');!!}</li>
 
                     </ul>                            
                   </li><!--//dropdown-->    
