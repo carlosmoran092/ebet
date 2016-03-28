@@ -146,11 +146,6 @@
 				// 
 				};
 			}
-
-
-
-
-
 /*
 Modal
 */
@@ -183,13 +178,10 @@ function setRates (){
 		valueSelect = $('select.language-name:nth('+i+')').val();
 		tai = valueSelect.split(",");
 
-
 		item_rate.title =  tai[0];
 		item_rate.image =  tai[1]; 
 		item_rate.rate  =  parseFloat( $("input.language-rate-value:nth("+i+")").val());
-		//item_rate.image =  $("select.language-name:nth-child("+i+")").attr('data-image');
-		
-		//#rate > div:nth-child(2) > div.form-group.col-md-7.col-sm-7 > select
+		/* Save item */
 		new_data.push(item_rate);
 
 		

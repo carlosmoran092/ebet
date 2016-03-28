@@ -146,6 +146,8 @@ function setRates (){
 
 	new_data  = [];
 
+
+
 	
 
 	for (var i = 0; i < num_r_lang; i++) {

@@ -42,6 +42,10 @@
                         <input type="email" class="form-control" id="cemail" name="email" placeholder="Your email address" required>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <label class="sr-only" for="cname">Subject</label>
+                        <input type="text" class="form-control" id="cname" name="name" placeholder="Subject" minlength="2" required>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                         <label class="sr-only" for="cmessage">Your message</label>
                         <textarea class="form-control" id="cmessage" name="message" placeholder="Enter your message" rows="4" required></textarea>
                     </div>

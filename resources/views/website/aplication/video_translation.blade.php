@@ -101,13 +101,14 @@
                                         {{-- <option>Text translation and proofreading</option>
                                         <option>Transcription and translation of text</option> --}}
 
-                                            <option>Incorporating subtitles</option>
+                                        <option>Incorporating subtitles</option>
                                         <option>Audio translation of original video</option>
+                                        <option>Audio file translation</option>
 
                                     </select>
                                 </div>
                                 <div class="form-group  col-lg-5">
-                                    <label>Initial Language</label>
+                                    <label><i class="icon-language"></i> Initial Language</label>
                                     <select class="js-source-states-2 form-group" name="initial" required="required"
                                             style="width: 100%">
                                         @foreach ($LA as $la)
@@ -118,7 +119,7 @@
                                 </div>
                                 <!--  -->
                                 <div class="form-group  col-lg-7">
-                                    <label>Target language(s)</label>
+                                    <label><i class="icon-language"></i> Target language(s)</label>
                                     <select class="js-source-states-2 form-group" multiple="multiple" name="initial"
                                             required="required" style="width: 100%">
                                         @foreach ($LA as $la)
@@ -128,80 +129,111 @@
                                     </select>
                                 </div>
                                 <!--  -->
+
+
                                 <div class="form-group  col-lg-5">
-                                    <label><i class="icon-person"></i> Add expert</label>
+                                    <label><i class="icon-mic-5"></i> Select Voice</label>
                                     <select class="js-source-states-2 form-group" name="initial" required="required"
                                             style="width: 100%">
-                                        @foreach ($experts as $expert)
-                                            <option value="{!! $expert->title !!}">{!! $expert->title !!}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-
-                                <div class="form-group  col-lg-7">
-                                    <label><i class="icon-docs-1"></i> Delivery Type</label>
-                                    <select class="js-source-states-2 form-group" name="initial" required="required"
-                                            style="width: 100%">
-                                        <option>Keep original style and format</option>
-                                        <option>Free presentation style editable format</option>
+                                        <option>Female Voice</option>
+                                        <option>Male voice</option>
 
                                     </select>
                                     <br><br>
                                 </div>
 
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-12">
-                                        <!-- The file upload form used as target for the file upload widget -->
-                                        {!! Form::open(array('method' => 'post', 'url' => 'text_files', 'files' => true,'id' => 'fileupload')) !!}
+                                <div class="form-group  col-lg-7">
+                                    <label><i class=" icon-back-in-time"></i> Estimated Duration</label>
+                                    <select class="js-source-states-2 form-group" name="initial" required="required"
+                                            style="width: 100%">
+                                        <option>Under 60 seconds</option>
+                                        <option>Between 1 and 5 minutes</option>
+                                        <option>Between 5 and 10 minutes</option>
+                                        <option>More than 10 minutes</option>
+
+                                    </select>
+                                    <br><br>
+                                </div>
+                                <div class="col-md-12">
 
 
-                                        <div class="row fileupload-buttonbar">
-                                            <div class="col-lg-12">
-                                                <!-- The fileinput-button span is used to style the file input field as button -->
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="icon-link-3"></i>Share File Link</a></li>
+                                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="icon-video-4"></i>Upload File</a></li>
+
+
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="home">
+                                            <br>
+
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">http://</div>
+                                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--  Upload Files  -->
+                                        <div role="tabpanel" class="tab-pane" id="profile">
+                                            <div class="form-group col-md-12">
+                                                <div class="col-md-12"><br>
+                                                    <!-- The file upload form used as target for the file upload widget -->
+                                                    {!! Form::open(array('method' => 'post', 'url' => 'text_files', 'files' => true,'id' => 'fileupload')) !!}
+
+
+                                                    <div class="row fileupload-buttonbar">
+                                                        <div class="col-lg-12">
+                                                            <!-- The fileinput-button span is used to style the file input field as button -->
                                 <span type="button" class="btn btn-success fileinput-button">
                                     <i class="glyphicon glyphicon-plus"></i>
                                     <span>Add files</span>
                                     <input type="file" name="files[]" multiple>
                                 </span>
-                                                <button type="submit" class="btn btn-primary start">
-                                                    <i class="glyphicon glyphicon-upload"></i>
-                                                    <span>Start upload</span>
-                                                </button>
-                                                <!--   <button type="reset" class="btn btn-warning cancel">
-                                                       <i class="glyphicon glyphicon-ban-circle"></i>
-                                                       <span>Cancel upload</span>
-                                                   </button>
-                                                   <button type="button" class="btn btn-danger delete">
-                                                       <i class="glyphicon glyphicon-trash"></i>
-                                                       <span>Delete</span>
-                                                   </button>
-                                                   <input type="checkbox" class="toggle"> -->
-                                                <!-- The global file processing state -->
-                                                <span class="fileupload-process"></span>
-                                            </div>
-                                            <!-- The global progress state -->
-                                            <div class="col-lg-5 fileupload-progress fade">
-                                                <!-- The global progress bar -->
-                                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                                                            <button type="submit" class="btn btn-primary start">
+                                                                <i class="glyphicon glyphicon-upload"></i>
+                                                                <span>Start upload</span>
+                                                            </button>
+
+                                                            <!-- The global file processing state -->
+                                                            <span class="fileupload-process"></span>
+                                                        </div>
+                                                        <!-- The global progress state -->
+                                                        <div class="col-lg-5 fileupload-progress fade">
+                                                            <!-- The global progress bar -->
+                                                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                                                            </div>
+                                                            <!-- The extended global progress state -->
+                                                            <div class="progress-extended">&nbsp;</div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- The table listing the files available for upload/download -->
+                                                    <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                                                    </form>
+
+
+                                                    <div class="alert alert-success">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                        <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
+                                                    </div>
+
+
                                                 </div>
-                                                <!-- The extended global progress state -->
-                                                <div class="progress-extended">&nbsp;</div>
                                             </div>
+                                            <!-- END  Upload Files  -->
+
                                         </div>
-                                        <!-- The table listing the files available for upload/download -->
-                                        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-                                        </form>
-
-
-                                        <div class="alert alert-success">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                            <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
-                                        </div>
-
 
                                     </div>
+
+
 
                                     <hr>
 

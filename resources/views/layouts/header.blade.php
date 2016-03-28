@@ -36,6 +36,7 @@
                       <li>{!!HTML::link('text_translation', 'Documents translation');!!}</li>
                       <li>{!!HTML::link('video_audio_translation', 'Video translation');!!}</li>
                       <li>{!!HTML::link('website_translation', 'Website translation');!!}</li>
+                      <li>{!!HTML::link('website_translation', 'Conference Support');!!}</li>
 
                     </ul>                            
                   </li><!--//dropdown-->    

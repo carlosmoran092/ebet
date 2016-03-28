@@ -177,9 +177,9 @@ class UploadHandler
             case 'HEAD':
                 $this->head();
                 break;
-            case 'GET':
+           /* case 'GET':
                 $this->get($this->options['print_response']);
-                break;
+                break; */
             case 'PATCH':
             case 'PUT':
             case 'POST':

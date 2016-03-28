@@ -41,7 +41,7 @@ class ApiController extends Controller
 // GET //
     public function getServices()
     {
-    	$services = App\Models\Api\Services::all();
+    	$services = Services::all();
     	return $services;
     }
 
@@ -111,6 +111,12 @@ class ApiController extends Controller
     }
 
 
+	public function get_services_documents(){
+		$services = App\Models\Api\Services::all();
+		return $services;
+}
+
+
 // UPDATE //
 
     public function UpdateService(Request $request, $id){
@@ -121,6 +127,10 @@ class ApiController extends Controller
 
 
 // DELETE //
+
+public function deleteService($id){
+return "Ok data";
+}
 
 
 }

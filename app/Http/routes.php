@@ -54,11 +54,11 @@ Route::group(['prefix' => 'workteam','middleware' => 'web'], function()
  Route::get('about','WebsiteController@about');
  Route::get('join','WebsiteController@join');
  Route::get('go_translation','WebsiteController@go_translation');
-Route::get('text_translation','WebsiteController@text_translation');
-Route::post('text_translation','WebsiteController@text_translation_upload');
+ Route::get('text_translation','WebsiteController@text_translation');
+ Route::post('text_translation','WebsiteController@text_translation_upload');
 
-Route::get('video_audio_translation','WebsiteController@video_audio');
-Route::get('website_translation','WebsiteController@website_translation');
+ Route::get('video_audio_translation','WebsiteController@video_audio');
+ Route::get('website_translation','WebsiteController@website_translation');
 
  Route::post('join','WebsiteController@store');
  Route::get('contact','WebsiteController@contact');
@@ -132,27 +132,27 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
     {
 
 
-       Route::get('{id}/edit', [
+     Route::get('{id}/edit', [
         'as'   => 'rates_language.edit', 
         'uses' => 'RateLanguageController@edit'
         ]);
 
-       Route::get('/', [
+     Route::get('/', [
         'as'   => 'rates_language.index', 
         'uses' => 'RateLanguageController@index'
         ]);
 
-       Route::get('/getalllanguages', [
+     Route::get('/getalllanguages', [
         'as'   => 'rates_language.index', 
         'uses' => 'RateLanguageController@getAllLanguages'
         ]);
 
-       Route::put('{id}', [
+     Route::put('{id}', [
         'as'   => 'rate_language.update', 
         'uses' => 'RateLanguageController@update'
         ]);
 
-   });
+ });
 
     /********************************************/
   //  Configuration API
@@ -162,35 +162,71 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
     {
 
 
-       Route::get('/', [
+     Route::get('/', [
         'as'   => 'serttings_api', 
         'uses' => 'ApiController@index'
         ]);
 
-       Route::post('store_service',[
+       // DOCUMENTS
+            //LOAD
+
+          Route::get('get_services_documents',[
+        'as' => 'get_services_documents',
+        'uses' => 'ApiController@getServices'
+        ]);
+
+
+            //STORE
+
+     Route::post('store_service',[
         'as' => 'store_service',
         'uses' => 'ApiController@storteService'
         ]);
 
-       Route::post('store_expert',[
+     Route::post('store_expert',[
         'as' => 'store_expert',
         'uses' => 'ApiController@storteExpert'
         ]);  
 
-       Route::post('store_delivery',[
+     Route::post('store_delivery',[
         'as' => 'store_delivery',
         'uses' => 'ApiController@storteDelivery'
         ]);  
-        Route::put('update_service',[
+            //DELETE
+
+     Route::get('delete_service/{id}',[
+        'as' => 'delete_service',
+        'uses' => 'ApiController@deleteService'
+        ]);
+
+     Route::get('delete_expert/{id}',[
+        'as' => 'delete_expert',
+        'uses' => 'ApiController@deleteExpert'
+        ]);  
+     Route::get('delete_delivery/{id}',[
+        'as' => 'delete_delivery',
+        'uses' => 'ApiController@deleteDelivery'
+        ]); 
+
+            //EDIT 
+
+
+
+
+     Route::put('update_service',[
         'as' => 'update_service',
         'uses' => 'ApiController@UpdateService'
         ]);  
+     Route::put('update_service',[
+        'as' => 'update_service',
+        'uses' => 'ApiController@UpdateService'
+        ]); 
 
 
-   });
+ });
 
-    Route::group(['middleware' => 'web'], function () {
-        Route::auth();
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-        Route::get('/administration', 'HomeAdmin@index');
-    });
+    Route::get('/administration', 'HomeAdmin@index');
+});

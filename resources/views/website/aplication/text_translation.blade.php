@@ -106,7 +106,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group  col-lg-5">
-                                    <label>Initial Language</label>
+                                    <label><i class="icon-language"></i> Initial Language</label>
                                     <select class="js-source-states-2 form-group" name="initial" required="required"
                                     style="width: 100%">
                                     @foreach ($LA as $la)
@@ -117,7 +117,7 @@
                             </div>
                             <!--  -->
                             <div class="form-group  col-lg-7">
-                                <label>Target language(s)</label>
+                                <label><i class="icon-language"></i> Target language(s)</label>
                                 <select class="js-source-states-2 form-group" multiple="multiple" name="initial"
                                 required="required" style="width: 100%">
                                 @foreach ($LA as $la)
@@ -149,63 +149,92 @@
                     <br><br>
                 </div>
 
+
                 <div class="form-group col-md-12">
-                    <div class="col-md-12">
-                        <!-- The file upload form used as target for the file upload widget -->
-                        {!! Form::open(array('method' => 'post', 'url' => 'text_files', 'files' => true,'id' => 'fileupload')) !!}
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="icon-doc-text-2"></i>Write</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="icon-doc-new"></i>Upload File</a></li>
 
 
-                        <div class="row fileupload-buttonbar">
-                            <div class="col-lg-12">
-                                <!-- The fileinput-button span is used to style the file input field as button -->
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <br>
+
+                            <div class="form-group">
+                                <div class="form-group col-lg-12">
+                                    <label>Professional profile</label>
+                                    <textarea id="charUp" rows="6" class="form-control" name="professional_profile"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  Upload Files  -->
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="form-group col-md-12">
+                                <div class="col-md-12"><br>
+                                    <!-- The file upload form used as target for the file upload widget -->
+                                    {!! Form::open(array('method' => 'post', 'url' => 'text_files', 'files' => true,'id' => 'fileupload')) !!}
+
+
+                                    <div class="row fileupload-buttonbar">
+                                        <div class="col-lg-12">
+                                            <!-- The fileinput-button span is used to style the file input field as button -->
                                 <span type="button" class="btn btn-success fileinput-button">
                                     <i class="glyphicon glyphicon-plus"></i>
                                     <span>Add files</span>
                                     <input type="file" name="files[]" multiple>
                                 </span>
-                                <button type="submit" class="btn btn-primary start">
-                                    <i class="glyphicon glyphicon-upload"></i>
-                                    <span>Start upload</span>
-                                </button>
-                                             <!--   <button type="reset" class="btn btn-warning cancel">
-                                                    <i class="glyphicon glyphicon-ban-circle"></i>
-                                                    <span>Cancel upload</span>
-                                                </button>
-                                                <button type="button" class="btn btn-danger delete">
-                                                    <i class="glyphicon glyphicon-trash"></i>
-                                                    <span>Delete</span>
-                                                </button>
-                                                <input type="checkbox" class="toggle"> -->
-                                                <!-- The global file processing state -->
-                                                <span class="fileupload-process"></span>
-                                            </div>
-                                            <!-- The global progress state -->
-                                            <div class="col-lg-5 fileupload-progress fade">
-                                                <!-- The global progress bar -->
-                                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                                                </div>
-                                                <!-- The extended global progress state -->
-                                                <div class="progress-extended">&nbsp;</div>
-                                            </div>
+                                            <button type="submit" class="btn btn-primary start">
+                                                <i class="glyphicon glyphicon-upload"></i>
+                                                <span>Start upload</span>
+                                            </button>
+
+                                            <!-- The global file processing state -->
+                                            <span class="fileupload-process"></span>
                                         </div>
-                                        <!-- The table listing the files available for upload/download -->
-                                        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                                        <!-- The global progress state -->
+                                        <div class="col-lg-5 fileupload-progress fade">
+                                            <!-- The global progress bar -->
+                                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                                            </div>
+                                            <!-- The extended global progress state -->
+                                            <div class="progress-extended">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <!-- The table listing the files available for upload/download -->
+                                    <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
                                     </form>
 
-                                    
-                                        <div class="alert alert-success">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                            <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
-                                        </div>
 
-                                    
+                                    <div class="alert alert-success">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
+                                    </div>
+
+
                                 </div>
+                            </div>
+                            <!-- END  Upload Files  -->
+
+                        </div>
+
+                    </div>
+
+
+
+                    <hr>
+                 </div>
+
+                                </section>
 
                                 <hr>
 
-
-                            </section>
 
                             <section class="col-md-5 go_aplication">
 
@@ -431,9 +460,9 @@
 
 <script>
     $("#charUp").counter({
-        count: 'up',
-        msg: '(max 600 characters)',
-        goal: 600
+        goal: 'sky',
+        type : 'word',
+        msg : 'words'
     });
 
     $('.confirm1').click(function () {

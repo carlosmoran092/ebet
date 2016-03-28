@@ -80,7 +80,7 @@
 
     <section class="contact-section section section-on-bg">
         <div class="container">
-            <h1 class="text-center camr-tilte">Quote Translation Service</h1>
+            <h1 class="text-center camr-tilte">Quote Website Translation</h1>
             <p></p>
             <div id="form-messages"></div>
 
@@ -100,9 +100,7 @@
                                     <select class="js-source-states-2 form-group" name="type" style="width: 100%">
                                         {{-- <option>Text translation and proofreading</option>
                                         <option>Transcription and translation of text</option> --}}
-                                        @foreach ($services as $service)
-                                            <option value="{!! $service->title !!}">{!! $service->title !!}</option>
-                                        @endforeach
+                                        <option>Text translation and images</option>
                                     </select>
                                 </div>
                                 <div class="form-group  col-lg-5">
@@ -139,70 +137,30 @@
                                 </div>
 
                                 <div class="form-group  col-lg-7">
-                                    <label><i class="icon-docs-1"></i> Delivery Type</label>
+                                    <label><i class="icon-docs-1"></i> Number of Pages</label>
                                     <select class="js-source-states-2 form-group" name="initial" required="required"
                                             style="width: 100%">
-                                        <option>Keep original style and format</option>
-                                        <option>Free presentation style editable format</option>
+                                        <option>Between 1 and 5</option>
+                                        <option>Between 5 and 12</option>
+                                        <option>Between 12 and 30</option>
+                                        <option>More than 30 pages</option>
 
                                     </select>
                                     <br><br>
                                 </div>
 
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-12">
-                                        <!-- The file upload form used as target for the file upload widget -->
-                                        {!! Form::open(array('method' => 'post', 'url' => 'text_files', 'files' => true,'id' => 'fileupload')) !!}
-
-
-                                        <div class="row fileupload-buttonbar">
-                                            <div class="col-lg-12">
-                                                <!-- The fileinput-button span is used to style the file input field as button -->
-                                <span type="button" class="btn btn-success fileinput-button">
-                                    <i class="glyphicon glyphicon-plus"></i>
-                                    <span>Add files</span>
-                                    <input type="file" name="files[]" multiple>
-                                </span>
-                                                <button type="submit" class="btn btn-primary start">
-                                                    <i class="glyphicon glyphicon-upload"></i>
-                                                    <span>Start upload</span>
-                                                </button>
-                                                <!--   <button type="reset" class="btn btn-warning cancel">
-                                                       <i class="glyphicon glyphicon-ban-circle"></i>
-                                                       <span>Cancel upload</span>
-                                                   </button>
-                                                   <button type="button" class="btn btn-danger delete">
-                                                       <i class="glyphicon glyphicon-trash"></i>
-                                                       <span>Delete</span>
-                                                   </button>
-                                                   <input type="checkbox" class="toggle"> -->
-                                                <!-- The global file processing state -->
-                                                <span class="fileupload-process"></span>
-                                            </div>
-                                            <!-- The global progress state -->
-                                            <div class="col-lg-5 fileupload-progress fade">
-                                                <!-- The global progress bar -->
-                                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                                                </div>
-                                                <!-- The extended global progress state -->
-                                                <div class="progress-extended">&nbsp;</div>
-                                            </div>
-                                        </div>
-                                        <!-- The table listing the files available for upload/download -->
-                                        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-                                        </form>
-
-
-                                        <div class="alert alert-success">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                            <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
-                                        </div>
-
+                                <div class="form-group col-lg-12">
+                                    <label><i class="icon-link-5"></i> URL Project</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">http://</div>
+                                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="">
 
                                     </div>
-
-                                    <hr>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label><i class=" icon-attach-2"></i> Comments</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
 
 
                             </section>
@@ -214,7 +172,7 @@
 
                                 <div class="rate-aplication col-md-12">
                                     <span class="col-md-9 col-sm-9 col-xs-9">
-                                      <h5><i class="icon-heart-empty"></i> Text translation and proofreading</h5>
+                                      <h5><i class="icon-heart-empty"></i> Text translation and images</h5>
                                   </span>
                                   <span class="col-md-3 text-right">
                                      0<i class="icon-dollar-1"></i>
@@ -233,12 +191,14 @@
 
                                 <div class="rate-aplication col-md-12">
                         <span class="col-md-9 col-sm-9 col-xs-9">
-                          <h5><i class="icon-docs-1"></i> Keep original style and format</h5>
+                          <h5><i class="icon-docs-1"></i> Between 12 and 30</h5>
                       </span>
                       <span class="col-md-3 text-right">
                          0<i class="icon-dollar-1"></i>
                      </span>
                                 </div>
+
+
 
 
                                 <div class="rate-aplication col-md-12">
@@ -252,7 +212,7 @@
 
                                 <div class="rate-aplication col-md-12">
                 <span class="col-md-9 col-sm-9 col-xs-9">
-                  <h5><i class="icon-docs-1"></i> Documents</h5>
+                  <h5><i class="icon-network-1"></i> Website</h5>
                   <div class="col-md-12" id="list_documents">
 
                   </div>
@@ -263,100 +223,12 @@
                                     <button class="btn btn-block btn-primary">Check Quote</button>
 
 
-                            </section>
-
-
                         </div>
-                    </div><!--//row-->
+
 
                     <br>
 
-                    <!-- The blueimp Gallery widget -->
-                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
-                        <div class="slides"></div>
-                        <h3 class="title"></h3>
-                        <a class="prev">‹</a>
-                        <a class="next">›</a>
-                        <a class="close">×</a>
-                        <a class="play-pause"></a>
-                        <ol class="indicator"></ol>
-                    </div>
-                    <!-- The template to display files available for upload -->
-                    <script id="template-upload" type="text/x-tmpl">
-    {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade">
-        <td>
-            <span class="preview"></span>
-        </td>
-        <td>
-            <p class="name">{%=file.name%}</p>
-            <strong class="error text-danger"></strong>
-        </td>
-        <td>
-            <p class="size">Processing...</p>
-            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-        </td>
-        <td>
-            {% if (!i && !o.options.autoUpload) { %}
-            <button class="btn btn-primary start" disabled>
-                <i class="glyphicon glyphicon-upload"></i>
-                <span>Start</span>
-            </button>
-            {% } %}
-            {% if (!i) { %}
-            <button class="btn btn-warning cancel">
-                <i class="glyphicon glyphicon-ban-circle"></i>
-                <span>Cancel</span>
-            </button>
-            {% } %}
-        </td>
-    </tr>
-    {% } %}
-</script>
-                    <!-- The template to display files available for download -->
-                    <script id="template-download" type="text/x-tmpl">
-    {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade">
-        <td>
-            <span class="preview">
-                {% if (file.thumbnailUrl) { %}
-                <a class="file_upload" href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-                {% } %}
-            </span>
-        </td>
-        <td>
-            <p class="name">
-                {% if (file.url) { %}
-                <a class="file_upload" href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                {% } else { %}
-                <span>{%=file.name%}</span>
-                {% } %}
-            </p>
-            {% if (file.error) { %}
-            <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-            {% } %}
-        </td>
-        <td>
-            <span class="size">{%=o.formatFileSize(file.size)%}</span>
-        </td>
-        <td>
-            {% if (file.deleteUrl) { %}
-            <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                <i class="glyphicon glyphicon-trash"></i>
-                <span>Delete</span>
-            </button>
-            <input type="checkbox" name="delete" value="1" class="toggle">
-            {% } else { %}
-            <button class="btn btn-warning cancel">
-                <i class="glyphicon glyphicon-ban-circle"></i>
-                <span>Cancel</span>
-            </button>
-            {% } %}
-        </td>
-    </tr>
-    {% } %}
-</script>
-                </div>
+
 
 
             </div>
