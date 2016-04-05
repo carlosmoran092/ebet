@@ -37,6 +37,8 @@
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <?php echo HTML::script('vendor/nicescroll/jquery.nicescroll.min.js'); ?>
 
+    <?php echo HTML::style('vendor/sweetalert/lib/sweet-alert.css'); ?>
+
 <script>
 $(document).ready(  function() {  $("html").niceScroll();  });
 </script>
@@ -168,6 +170,8 @@ $(document).ready(  function() {  $("html").niceScroll();  });
 <?php echo HTML::script('vendor/iCheck/icheck.min.js'); ?>
 
 <?php echo HTML::script('vendor/sparkline/index.js'); ?>
+
+<?php echo HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js'); ?>
 
 
 <!-- App scripts -->

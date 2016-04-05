@@ -27,6 +27,7 @@
     @yield('add_style')
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     {!! HTML::script('vendor/nicescroll/jquery.nicescroll.min.js') !!}
+    {!! HTML::style('vendor/sweetalert/lib/sweet-alert.css') !!}
 <script>
 $(document).ready(  function() {  $("html").niceScroll();  });
 </script>
@@ -149,6 +150,7 @@ $(document).ready(  function() {  $("html").niceScroll();  });
 {!!HTML::script('vendor/peity/jquery.peity.min.js')!!}
 {!!HTML::script('vendor/iCheck/icheck.min.js')!!}
 {!!HTML::script('vendor/sparkline/index.js')!!}
+{!! HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js') !!}
 
 <!-- App scripts -->
 {!!HTML::script('scripts/homer.js')!!}

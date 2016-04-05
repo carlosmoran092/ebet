@@ -61,25 +61,13 @@ class ApiController extends Controller
 
 
 // STORE //
-    public function storteService(Request $data)
-    {
-    	$services   = new Services;
-    	$experts    = new Experts;
-    	$deliveries = new Deliveries;
-    	
-    	$services->title = $data->input('title');
-    	$services->rates = $data->input('rates');
-
-    	$services->save();   
-
-    	$services = Services::all(); 
-    	$experts = Experts::all();	
-    	$deliveries = Deliveries::all();
-
-
-    	return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
-    	
-
+    public function storteService(Request $request)
+	{
+		if($request->ajax()) {
+			//$expediente = Expediente::create($request->all());
+			//return response()->json(['message' => 'Insertado correctamente']);
+			return ($request->all());
+		}
     }
 
     public function storteExpert(Request $data)

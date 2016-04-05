@@ -46,24 +46,24 @@
                                  <div role="tabpanel" class="tab-pane active" id="services"><br>
                                      <div class="col-md-6">
                                          {{--  --}}
-                                         {!! Form::open(array('method' => 'post', 'url' => 'settings/api/store_service')) !!}
 
+                                         {!! Form::open(array('method' => 'post', 'action' => 'Settings\ApiController@storteService','id'=>'SaveService')) !!}
 
                                          <div class="form-group col-md-9">
                                              <label for="">Title of service</label>
-                                             <input type="text" class="form-control" name="title" id="" placeholder="" required="required">
+                                             <input type="text" class="form-control" name="title" value="" id="title-service" placeholder="" required="required">
                                          </div>
 
 
                                          <div class="form-group col-md-3">
                                              <label for="">Price/Word</label>
-                                             <input type="number" name="rates" class="form-control" min="0" id="" step="0.01" required="required">
+                                             <input type="number" name="rates" class="form-control" value="" min="0" id="rate-service" step="0.01" required="required">
                                          </div>
 
 
                                          <div class="form-group col-md-12">
+<button class="btn-md btn btn-primary" type="submit" id="InputSaveService">Guardar</button>
 
-                                             {!! Form::submit('Create',array('class' => 'btn btn-sm btn-default')) !!}
 
                                          </div>
                                          {!! Form::close() !!}
