@@ -168,6 +168,8 @@ function setRates (){
 
 	new_data  = [];
 
+
+
 	
 
 	for (var i = 0; i < num_r_lang; i++) {
@@ -200,6 +202,9 @@ function setRates (){
 
 		success: function(data){
 			console.log(data);
+		},
+		error: function() {
+			callback('error');
 		}
 	});      
 

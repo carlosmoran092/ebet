@@ -175,4 +175,8 @@
   font-size: 16px;
   font-family: 'Open Sans', Helvetica,sans-serif; }
 
+.list-table-items {
+  max-height: 200px;
+  overflow-y: auto; }
+
 /*# sourceMappingURL=admin.css.map */

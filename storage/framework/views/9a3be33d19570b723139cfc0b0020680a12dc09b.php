@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="<?php echo csrf_token(); ?>" />
+    <meta name="csrf-token" content="<?php echo csrf_token(); ?>">
 
     <!-- Page title -->
     <title>TRADOKEY</title>
@@ -39,9 +39,7 @@
 
     <?php echo HTML::style('vendor/sweetalert/lib/sweet-alert.css'); ?>
 
-<script>
-$(document).ready(  function() {  $("html").niceScroll();  });
-</script>
+
 
 </head>
 <body class="fixed-sidebar fixed-navbar">
@@ -173,6 +171,8 @@ $(document).ready(  function() {  $("html").niceScroll();  });
 
 <?php echo HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js'); ?>
 
+<?php echo HTML::script('vendor/nicescroll/jquery.nicescroll.min.js'); ?>
+
 
 <!-- App scripts -->
 <?php echo HTML::script('scripts/homer.js'); ?>
@@ -180,6 +180,11 @@ $(document).ready(  function() {  $("html").niceScroll();  });
 <?php echo HTML::script('scripts/charts.js'); ?>
 
 <script> $('[data-toggle="tooltip"]').tooltip();</script>
+
+
+<script>
+$(document).ready(  function() {  $("html").niceScroll();  });
+</script>
 
 
 

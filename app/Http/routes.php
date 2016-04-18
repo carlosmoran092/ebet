@@ -158,7 +158,7 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
   //  Configuration API
     /*******************************************/
 
-    Route::group(['prefix' => 'settings/api', 'namespace' => 'Settings'], function()
+    Route::group(['prefix' => 'settings/api', 'namespace' => 'Settings','middleware' => 'web'], function()
     {
 
 
@@ -206,13 +206,8 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
      Route::get('delete_delivery/{id}',[
         'as' => 'delete_delivery',
         'uses' => 'ApiController@deleteDelivery'
-        ]); 
-
+        ]);
             //EDIT 
-
-
-
-
      Route::put('update_service',[
         'as' => 'update_service',
         'uses' => 'ApiController@UpdateService'

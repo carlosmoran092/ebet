@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="{!! csrf_token() !!}" />
+    <meta name="csrf-token" content="<?php echo csrf_token(); ?>">
 
     <!-- Page title -->
     <title>TRADOKEY</title>
@@ -28,9 +28,7 @@
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     {!! HTML::script('vendor/nicescroll/jquery.nicescroll.min.js') !!}
     {!! HTML::style('vendor/sweetalert/lib/sweet-alert.css') !!}
-<script>
-$(document).ready(  function() {  $("html").niceScroll();  });
-</script>
+
 
 </head>
 <body class="fixed-sidebar fixed-navbar">
@@ -151,11 +149,17 @@ $(document).ready(  function() {  $("html").niceScroll();  });
 {!!HTML::script('vendor/iCheck/icheck.min.js')!!}
 {!!HTML::script('vendor/sparkline/index.js')!!}
 {!! HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js') !!}
+{!! HTML::script('vendor/nicescroll/jquery.nicescroll.min.js') !!}
 
 <!-- App scripts -->
 {!!HTML::script('scripts/homer.js')!!}
 {!!HTML::script('scripts/charts.js')!!}
 <script> $('[data-toggle="tooltip"]').tooltip();</script>
+
+
+<script>
+$(document).ready(  function() {  $("html").niceScroll();  });
+</script>
 
 
 

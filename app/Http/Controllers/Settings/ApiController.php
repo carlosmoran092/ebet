@@ -60,56 +60,58 @@ class ApiController extends Controller
 
 
 
-// STORE //
+// STORE SERVICE //
     public function storteService(Request $request)
-	{
-		if($request->ajax()) {
-			//$expediente = Expediente::create($request->all());
-			//return response()->json(['message' => 'Insertado correctamente']);
-			return ($request->all());
-		}
-    }
-
-    public function storteExpert(Request $data)
     {
-    	$services   = new Services;
-    	$experts    = new Experts;
-    	$deliveries = new Deliveries;
+      if($request->ajax()) {  
+         $new_service = new Services;
+         $new_service->title = $request->input('title');
+         $new_service->rates = $request->input('rates');
+         $new_service->save();   
+         return "Guardado";  
+     }else{ return "Algo va mal";}
+ }
 
-    	$expert->title = $data->input('title');
-    	$expert->rates = $data->input('rates');
+ public function storteExpert(Request $data)
+ {
+   $services   = new Services;
+   $experts    = new Experts;
+   $deliveries = new Deliveries;
 
-    	$expert->save();
+   $expert->title = $data->input('title');
+   $expert->rates = $data->input('rates');
 
-    	return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
-    }
+   $expert->save();
 
-    public function storteDelivery(Request $data)
-    {
-    	$services   = new Services;
-    	$experts    = new Experts;
-    	$deliveries = new Deliveries;
+   return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+}
 
-    	$delivery->title = $data->input('title');
-    	$delivery->rates = $data->input('rates');
+public function storteDelivery(Request $data)
+{
+   $services   = new Services;
+   $experts    = new Experts;
+   $deliveries = new Deliveries;
 
-    	$delivery->save();
+   $delivery->title = $data->input('title');
+   $delivery->rates = $data->input('rates');
 
-    	return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
-    }
+   $delivery->save();
+
+   return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+}
 
 
-	public function get_services_documents(){
-		$services = App\Models\Api\Services::all();
-		return $services;
+public function get_services_documents(){
+  $services = App\Models\Api\Services::all();
+  return $services;
 }
 
 
 // UPDATE //
 
-    public function UpdateService(Request $request, $id){
-    	$service = Services::find($id);
-    }
+public function UpdateService(Request $request, $id){
+   $service = Services::find($id);
+}
 
 
 
@@ -117,7 +119,7 @@ class ApiController extends Controller
 // DELETE //
 
 public function deleteService($id){
-return "Ok data";
+    return "Ok data";
 }
 
 
