@@ -91,10 +91,8 @@ public function storteDelivery(Request $data)
    $services   = new Services;
    $experts    = new Experts;
    $deliveries = new Deliveries;
-
    $delivery->title = $data->input('title');
    $delivery->rates = $data->input('rates');
-
    $delivery->save();
 
    return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
@@ -106,7 +104,6 @@ public function get_services_documents(){
   return $services;
 }
 
-
 // UPDATE //
 
 public function UpdateService(Request $request, $id){
@@ -114,12 +111,12 @@ public function UpdateService(Request $request, $id){
 }
 
 
-
-
 // DELETE //
 
 public function deleteService($id){
-    return "Ok data";
+    $id = $id;
+    DB::table('services')->where('id', '=', $id)->delete();
+    return "Delete OK";
 }
 
 

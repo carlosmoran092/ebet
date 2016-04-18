@@ -1,15 +1,21 @@
 var server = 'http://test.dev/settings/api/';
 
 
+$('html').on('click', '.deleteService', function(event) {
+	event.preventDefault();
+	
+	var val = $(this).prop('value');
+
+$.get(server+'delete_service/'+val, function(data,status){elementoEliminado();/*alert("Data: " + data + "\nStatus: " + status);*/});	
+all_services ();	
+
+});
+
+
 
 $(function() {
 
-	$('.deleteService').click(function(event) {	
-		var val = $(this).prop('value');
-		console.log(val);
-	$.get(server+'delete_service/'+val, function(data,status){elementoEliminado();/*alert("Data: " + data + "\nStatus: " + status);*/});	
-	getService();	
-});
+
 	function getService () {
 	$.get(server+'get_services_documents', function(data,status){/*alert("Data: " + data + "\nStatus: " + status);*/ });	
 }
@@ -49,21 +55,23 @@ $(function(){
 //		END SAVE AJAX    <---
 
 
-	
+
 
 });
 
 
 function all_services () {
-$.get(server+"get_services_documents", function(data, status){
-        var newData = data; 
+	$.get(server+"get_services_documents", function(data, status){
+		var newData = data; 
         //console.log(newData);
-       for (var i = 0; i < newData.length; i++) {
+        $("#get_services").empty();
+        for (var i = 0; i < newData.length; i++) {
        	//console.log(newData[i]);
+
        	$("#get_services").append('<tr><td>'+newData[i].title+'</td><td>'+newData[i].rates+'</td><td><a id="service_'+newData[i].id+'"  type="button" class="edit_service btn btn-xs btn-default"><i class=" icon-pencil-alt"></i></a><button value="'+newData[i].id+'" type="button" class="btn btn-xs btn-default deleteService"><i class=" icon-trash-8"></i></button></td></tr>');
-       $(".list-table-items").niceScroll();
+       	$(".list-table-items").niceScroll();
        };
-    });	
+   });	
 }
 
 	// Mensajes
@@ -71,6 +79,6 @@ $.get(server+"get_services_documents", function(data, status){
 		swal("Good job!", "You clicked the button!", "success"); 
 	}
 
-		function Good (item) {
+	function Good (item) {
 		swal("Good job!", "The "+item+" been registered successfully.", "success"); 
 	}

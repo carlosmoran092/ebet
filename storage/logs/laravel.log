@@ -26701,3 +26701,6 @@ Stack trace:
 [2016-04-18 05:48:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in C:\xampp\htdocs\test\storage\framework\views\ef8fec5fbe2fabc8c6f9d2ec71d25ea5dea09e3e.php:253
 Stack trace:
 #0 {main}  
+[2016-04-18 06:58:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Controllers\Settings\App\Models\Api\Services' not found' in C:\xampp\htdocs\test\app\Http\Controllers\Settings\ApiController.php:122
+Stack trace:
+#0 {main}  
