@@ -140,7 +140,8 @@
 </div>
 
 <!-- Vendor scripts -->
-{!!HTML::script('vendor/jquery/dist/jquery.min.js') !!}
+
+{!!HTML::script('vendor/jquery/dist/jquery.min.js') !!}{{-- jQuery v2.1.3 --}}
 {!!HTML::script('vendor/jquery-ui/jquery-ui.min.js')!!}
 {!!HTML::script('vendor/slimScroll/jquery.slimscroll.min.js')!!}
 {!!HTML::script('vendor/bootstrap/dist/js/bootstrap.min.js')!!}

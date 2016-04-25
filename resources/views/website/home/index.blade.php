@@ -5,7 +5,7 @@
 
 
 <head>
-	<title>Responsive website template for products</title>
+	<title>Tradokey</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,7 +54,7 @@
     <section class="promo section section-on-bg">
       <div class="container text-center">                
        <h2 class="title">We are professionals ready to provide great <br>service and support in multiple languages</h2>
-       <p class="intro">Tradekey is a web tool designed to provide confidence and ensure quality translations.</p>
+       <p class="intro">Tradokey is a web tool designed to provide confidence and ensure quality translations.</p>
        <p><a class="btn btn-cta btn-cta-tertiary" href="">Quote translation</a></p>   
        <button type="button" class="play-trigger btn-link " data-toggle="modal" data-target="#modal-video" ><i class="fa fa-youtube-play"></i> 
         Who are we?</button>

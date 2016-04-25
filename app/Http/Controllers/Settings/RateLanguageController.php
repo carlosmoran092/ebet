@@ -41,10 +41,9 @@ class RateLanguageController extends Controller
 
         $LA = LanguageAvailable::where('active', 1)
         ->orderBy('name', 'asc');
-        
-        LanguageAvailable::find($id);
+      
         $lang = LanguageAvailable::find($id);
-        return view('administration.settings.rates.edit',['lang'=>$lang,'LA'=>$LA]);
+        return view('administration.settings.rates.edit',['lang'=>$lang,'ALL'=>$LA]);
     }
 
     public function update(Request $request, $id)

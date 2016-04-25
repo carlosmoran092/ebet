@@ -153,8 +153,8 @@
 </div>
 
 <!-- Vendor scripts -->
-<?php echo HTML::script('vendor/jquery/dist/jquery.min.js'); ?>
 
+<?php echo HTML::script('vendor/jquery/dist/jquery.min.js'); ?><?php /* jQuery v2.1.3 */ ?>
 <?php echo HTML::script('vendor/jquery-ui/jquery-ui.min.js'); ?>
 
 <?php echo HTML::script('vendor/slimScroll/jquery.slimscroll.min.js'); ?>

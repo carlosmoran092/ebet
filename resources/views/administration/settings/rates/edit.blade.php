@@ -33,9 +33,7 @@
 </head>
 <body>
 	<?php
-
 	$tl = json_decode($lang->target_languages);
-
 	?>
 
 
@@ -45,85 +43,89 @@
 			</div>
 			<div class="panel-body">
 				{!! Form::open(array('action' => array('Settings\RateLanguageController@update',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id,'class'=>'form_rate')) !!}
-
-
-
 				<section id="rate">
-
 				</section>
-
 				<section class="col-md-12 add-rate col-sm-12">
-					<a class="btn btn-default btn-md btn-block btn-add-rate">Add Rate</a>
-				</section>
+					@foreach ($LA as $LA)
+					<div class="language-rate">
+						<div class="form-group col-md-2">
+							<h4>{!! HTML::image('images/small/'.$LA->patch_image.'.png') !!}{!! $LA->title !!}</h4>
+						</div>
+						<div class="form-group col-md-6 col-sm-7">
+							<input type="hidden" type="text" name="{!! $LA->name !!}[name][]">
+						</div>
+						<div class="form-group col-md-4 col-sm-4">
+							<input type="number" name="{!! $lA->name !!}[rate][]" value="" min="0" step="0.010" class="form-control language-rate-value" ></div>
+						</div>
+						@endforeach
+					</section>
+					
 
+					<div class="form-group col-md-12">
+						{!! Form::button('UPDATE', array('class'=>'btn btn-sm btn-default confirm-modal')); !!}
+						{!! Form::button('CLOSE', array('class' => 'btn btn-sm btn-default close-modal','data-dismiss'=>'modal')); !!}
+						{{-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> --}}
+					</div>
 
+					{!! Form::close() !!}
 
-
-				<div class="form-group col-md-12">
-					{!! Form::button('UPDATE', array('class'=>'btn btn-sm btn-default confirm-modal')); !!}
-					{!! Form::button('CLOSE', array('class' => 'btn btn-sm btn-default close-modal','data-dismiss'=>'modal')); !!}
-					{{-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> --}}
 				</div>
-
-				{!! Form::close() !!}
-
 			</div>
-		</div>
 
-		{!!HTML::script('vendor/jquery/dist/jquery.min.js') !!}
-		{!!HTML::script('vendor/jquery-ui/jquery-ui.min.js')!!}
-		{!!HTML::script('vendor/slimScroll/jquery.slimscroll.min.js')!!}
-		{!!HTML::script('vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')!!}
-		{!!HTML::script('vendor/bootstrap/dist/js/bootstrap.min.js')!!}
-		{!! HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js') !!}
-
-
-		<script>
-			$(".input_target").TouchSpin({
-				min: 0,
-				max: 200,
-				step: 0.020,
-				decimals: 3,
-				boostat: 5,
-				maxboostedstep: 10,
-				postfix: '<i class="icon-dollar-1"></i>'
-			});
-		</script>
-
-		<script>
-			$('html').on('click', '.btn-add-rate', function(event) {
-				$('#rate').append('<div class="language-rate"><div class="form-group col-md-1 col-sm-1 btn-remove"><a class="btn btn-xs btn-default icon-cancel-3 cancel" data="12345"></a></div><div class="form-group col-md-7 col-sm-7"><select value="" name="" class="language-name form-control"></select></div><div class="form-group col-md-4 col-sm-4"><input type="number" name="" value="" min="0" step="0.010" class="form-control language-rate-value" ></div></div>');
-				loadSelects();
-
-			});
+			{!!HTML::script('vendor/jquery/dist/jquery.min.js') !!}
+			{!!HTML::script('vendor/jquery-ui/jquery-ui.min.js')!!}
+			{!!HTML::script('vendor/slimScroll/jquery.slimscroll.min.js')!!}
+			{!!HTML::script('vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')!!}
+			{!!HTML::script('vendor/bootstrap/dist/js/bootstrap.min.js')!!}
+			{!! HTML::script ('vendor/sweetalert/lib/sweet-alert.min.js') !!}
 
 
-			$.ajaxSetup({ cache: false });
-			var data = [];		
+			<script>
+				$(".input_target").TouchSpin({
+					min: 0,
+					max: 200,
+					step: 0.020,
+					decimals: 3,
+					boostat: 5,
+					maxboostedstep: 10,
+					postfix: '<i class="icon-dollar-1"></i>'
+				});
+			</script>
 
-			var jqxhr = $.getJSON( "http://{!! $_SERVER['SERVER_NAME']; !!}/settings/rates_language/getalllanguages", function() {
-				console.log( "success" );
-				data = jqxhr.responseJSON;
-			})
-			.done(function() {
-				console.log( "second success" );
-			})
-			.fail(function() {
-				console.log( "ERROR" );
-			})
-			.always(function() {
-				console.log( "complete" );
-			});
-			jqxhr.complete(function() {
-				console.log( "Complete!!" );
-			});
+			<script>
+				$('html').on('click', '.btn-add-ratex', function(event) {
+					$('#rate').append('<div class="language-rate"><div class="form-group col-md-1 col-sm-1 btn-remove"><a class="btn btn-xs btn-default icon-cancel-3 cancel" data="12345"></a></div><div class="form-group col-md-7 col-sm-7"><select value="" name="" class="language-name form-control"></select></div><div class="form-group col-md-4 col-sm-4"><input type="number" name="" value="" min="0" step="0.010" class="form-control language-rate-value" ></div></div>');
+					loadSelects();
 
-			function loadSelects(){
-				for (var i = 0; i < data.length; i++) {
-					$('select:last').append('<option value="'+data[i].title+','+data[i].patch_image+'" data-id="'+data[i].id+'" >'+data[i].title+'</option>');
+				});
+
+
+				$.ajaxSetup({ cache: false });
+				var data = [];		
+
+				var jqxhr = $.getJSON( "http://{!! $_SERVER['SERVER_NAME']; !!}/settings/rates_language/getalllanguages", function() {
+					console.log( "success" );
+					data = jqxhr.responseJSON;
+				})
+				.done(function() {
+					console.log( "second success" );
+				})
+				.fail(function() {
+					console.log( "ERROR" );
+				})
+				.always(function() {
+					console.log( "complete" );
+				});
+				jqxhr.complete(function() {
+					console.log( "Complete!!" );
+				});
+
+				function loadSelects(){
+					for (var i = 0; i < data.length; i++) {
+						$('select:last').append('<option value="'+data[i].title+','+data[i].patch_image+'" data-id="'+data[i].id+'" >'+data[i].title+'</option>');
 				// 
-				};
-			}
+			};
+		}
 /*
 Modal
 */

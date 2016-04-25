@@ -10,6 +10,7 @@ use App\Models\Api\Experts;
 use App\Models\Api\Services;
 use App\Models\Api\Deliveries;
 
+
 use DB;
 use Session;
 use Validator;
@@ -34,7 +35,8 @@ class ApiController extends Controller
     	$services = Services::all(); 
     	$experts = Experts::all();	
     	$deliveries = Deliveries::all();
-    	return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+      $LA = LanguageAvailable::all();
+    	return view('administration.settings.configuration.api',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
     }
 
 

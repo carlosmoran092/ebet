@@ -9,9 +9,11 @@
         <div id="hbreadcrumb" class="pull-right">
             <?php /*  */ ?>
 			<div class="btn-group" role="group" aria-label="...">
+            <?php echo HTML::link('settings/api', ' API',array('class'=>'btn btn-default btn-md icon-wrench-1'));; ?>
+
             <?php echo HTML::link('settings/languages_available', ' Languages Available',array('class'=>'btn btn-default btn-md icon-language'));; ?>
 
-            <?php echo HTML::link('settings/job_applications', ' Job Applications',array('class'=>'btn btn-default btn-md icon-puzzle'));; ?>
+            <?php echo HTML::link('settings/job_applications', ' Job Applications',array('class'=>'btn btn-default btn-md icon-person'));; ?>
 
             <?php echo HTML::link('settings/dealings', ' Dealings',array('class'=>'btn btn-default btn-md icon-dollar-1'));; ?>
 
