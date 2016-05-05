@@ -20,11 +20,11 @@
     
     <hr>
     <?php /* <form action="languages_submit" method="get" accept-charset="utf-8"> */ ?>
-    <?php echo Form::open(array('action' => array('Settings\LanguagesAvailableController@update',$lang->id),'before' => 'csrf','method' => 'put','id'=>$lang->id)); ?>
+    <?php echo Form::open(array('action' => array('Settings\LanguagesAvailableController@update',$lang->id),'before' => 'csrf','method' => 'post','id'=>'edit_lang')); ?>
 
 
 
-    <?php echo Form::hidden('type', 'languages_available');; ?>
+    <?php echo Form::hidden('id', ''.$lang->id.'');; ?>
 
     <?php /*  */ ?>
     <div class="col-lg-12 form-text-add">
@@ -82,24 +82,17 @@
       <?php endif; ?>
     </select>
   </div>
-
-
   <div class="form-group  col-lg-12">
     <label>Translation into other</label>
-
     <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#myModal">
       <?php echo 'Rates for '.$lang->title; ?>
 
     </button>   
   </div>
-
-
-
   <div class="form-group">
-    <?php echo Form::submit('Update '.$lang->title.'', array('class' => 'btn btn-sm btn-success'));; ?>
+    <?php echo Form::submit('Update '.$lang->title.'', array('class' => 'btn btn-sm btn-success','id' => 'update'));; ?>
 
   </div>
-
 </div>
 <?php /*  */ ?>
 <?php echo Form::close(); ?>
@@ -117,85 +110,102 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Edit Rates</h4>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="col-lg-10">
-              <select name="selets[]" id="selects" class="form-control js-source-states-2" multiple="multiple">
-                <?php foreach($LA as $La): ?>
-                <?php if($La->title != $lang->title): ?>
-                <option value="<?php echo $La->name; ?>"><?php echo $La->title; ?></option>             
-                <?php endif; ?>                
-                <?php endforeach; ?>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <button id="add_rates_" class="btn btn-success">Update Rates</button>
-            </div>
-            <br>
-          </div>        
 
-          <div class="col-lg-12">
-            <br>
-            <?php foreach($LA as $LAG): ?>
-            <div id="<?php echo $LAG->name; ?>" class="col-lg-12">
-              <div class="form-group col-md-5">
-                <h4><?php echo HTML::image('images/small/'.$LAG->patch_image.'.png'); ?> <?php echo $LAG->title; ?></h4>
-              </div>          
-              <input type="hidden" type="text" name="<?php echo $LAG->name; ?>[name][]"> 
-              <input type="hidden" type="text" name="<?php echo $LAG->name; ?>[patch_image][]">             
-              <div class="form-group col-md-3 col-sm-4">
-                <input type="number" name="<?php echo $LAG->name; ?>[rate][]" value="" min="0" step="0.010" class="form-control language-rate-value" ></div>
-              </div>
-              <?php endforeach; ?> 
-            </div>
+         <?php echo Form::open(array('action' => array('Settings\LanguagesAvailableController@updateTargetLanguages',$lang->id),'before' => 'csrf','method' => 'post','id'=>'edit_target')); ?>
+
+
+
+         <?php echo Form::hidden('id', ''.$lang->id.'');; ?>
+
+
+         <div class="col-lg-12">
+          <div class="col-lg-10">
+            <select name="selets[]" id="selects" class="form-control js-source-states-2" multiple="multiple">
+              <?php foreach($LA as $La): ?>
+              <?php if($La->title != $lang->title): ?>
+              <option value="<?php echo $La->name; ?>"><?php echo $La->title; ?></option>             
+              <?php endif; ?>                
+              <?php endforeach; ?>
+            </select>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="save_update" class="btn btn-primary">Save changes</button>
+          <div class="col-md-2">
+            <button id="add_rates_" class="btn btn-success">Update Rates</button>
+          </div>
+          <br>
+        </div>        
+
+        <div class="col-lg-12">
+          <br>
+          <?php foreach($LA as $LAG): ?>
+          <div id="<?php echo $LAG->name; ?>" class="col-lg-12">
+            <div class="form-group col-md-5">
+              <h4><?php echo HTML::image('images/small/'.$LAG->patch_image.'.png'); ?> <?php echo $LAG->title; ?></h4>
+            </div>          
+            <input type="hidden" value="<?php echo $LAG->name; ?>" type="text" name="<?php echo $LAG->name; ?>[name][]"> 
+            <input type="hidden" value="<?php echo $LAG->patch_image; ?>" type="text" name="<?php echo $LAG->name; ?>[patch_image][]">             
+            <div class="form-group col-md-3 col-sm-4">
+              <input type="number" name="<?php echo $LAG->name; ?>[rate][]" value="" min="0" step="0.010" class="form-control language-rate-value" ></div>
+
+              <div class="form-group col-md-2 col-sm-3"> <button attr-id="<?php echo $LAG->name; ?>" class="btn btn-primary btn-xs hide_rate icon-cancel"></button> </div>
+            </div>
+            <?php endforeach; ?> 
+          </div>
+          
+
         </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        <?php /* <button type="button" id="save_targets" class="btn btn-primary">Save changes</button> */ ?>
+      </div>
+      <?php echo Form::close(); ?>
+
     </div>
   </div>
+</div>
 
 
-  <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
 
 
-  <?php $__env->startSection('add_script'); ?>
-  <?php echo HTML::script('vendor/nicescroll/jquery.nicescroll.min.js'); ?>
+<?php $__env->startSection('add_script'); ?>
+<?php echo HTML::script('vendor/nicescroll/jquery.nicescroll.min.js'); ?>
 
 
-  <script>
-    $(document).ready(  function() {
-      $(".list-lang-add").niceScroll();
-    });
-  </script>
+<script>
+  $(document).ready(  function() {
+    $(".list-lang-add").niceScroll();
+  });
+</script>
 
 
-  <?php echo HTML::script('vendor/select2-3.5.2/select2.min.js'); ?>
+<?php echo HTML::script('vendor/select2-3.5.2/select2.min.js'); ?>
 
-  <script>
-    $(".js-source-states-2").select2();
-    $(".languages_add").select2();
-  </script>
+<?php echo HTML::script('administration/api.js'); ?>
+
+<script>
+  $(".js-source-states-2").select2();
+  $(".languages_add").select2();
+</script>
 
 
-  <script>
-   var languages = new Object; 
-   <?php foreach($LA as $la_sc): ?>
-   languages["<?php echo $la_sc->name; ?>"] = {title:"<?php echo $la_sc->title; ?>",visible: false};
-   <?php endforeach; ?>
+<script>
+ var languages = new Object; 
+ <?php foreach($LA as $la_sc): ?>
+ languages["<?php echo $la_sc->name; ?>"] = {title:"<?php echo $la_sc->title; ?>",visible: false};
+ <?php endforeach; ?>
 
-   var arr_lang=(Object.keys(languages));
+ var arr_lang=(Object.keys(languages));
 
-   function hide_languages (){
-    for (var i = 0; i < arr_lang.length; i++) {
-      if (languages[""+arr_lang[i]+""].visible == false) {
-        languages[""+arr_lang[i]+""].visible = false;
+ function hide_languages (){
+  for (var i = 0; i < arr_lang.length; i++) {
+    if (languages[""+arr_lang[i]+""].visible == false) {
+      languages[""+arr_lang[i]+""].visible = false;
         //console.log("item" +i+ " escondido");   
         ite = languages[""+arr_lang[i]+""].nombre;
         $("#"+arr_lang[i]+"").hide();     
@@ -218,40 +228,56 @@
     }
   };
 
-  $("body").on('click', '#add_rates_', function(event) {
-    event.preventDefault();
-    var all = $("#selects").val();
-    hide_languages();
-    for (var i = 0; i < all.length; i++) {
-      $("#"+all[i]+"").show();
-    };
-  });
+// Btn Hide Rate Language
+
+$("body").on('click', '.hide_rate', function(event) {
+  event.preventDefault();
+
+  btn=$(this).attr('attr-id');
+  reset=""+btn+"[rate][]";
+  $("[name='"+reset+"']").removeAttr('value');
+  languages[""+btn+""].visible = false;
+  $("#"+btn+"").hide();  
+  console.log(reset);    
+});
+
+$("body").on('click', '#add_rates_', function(event) {
+  event.preventDefault();
+  var all = $("#selects").val();
+  hide_languages();
+  for (var i = 0; i < all.length; i++) {
+    $("#"+all[i]+"").show();
+    languages[""+all[i]+""].visible = true;
+  };
+});
 
 </script>
 
-//function update_rates
-//Recorre objeto languages
-//captura valor de los input
-//Los guarda en objeto
+<?php /* 
+function update_rates
+Recorre objeto languages
+captura valor de los input
+Los guarda en objeto 
+*/ ?>
 
 <script>
-var share_data = new Object;
+  var share_data = new Object;
   $("body").on('click', '#save_update', function(event) {
     event.preventDefault();
     var data_lang = new Object;
     for (var i = 0; i < arr_lang.length; i++) {
-      if (languages[""+arr_lang[i]+""].visible==true) {
-         data_lang.arr_lang[i].name=$("[name='"+arr_lang[i]+"[name][]']").val();
-         data_lang.arr_lang[i].title=$("[name='"+arr_lang[i]+"[title][]']").val();
-         data_lang.arr_lang[i].patch_image=$("[name='"+arr_lang[i]+"[patch_image][]']").val();
-         data_lang.arr_lang[i].rate=$("[name='"+arr_lang[i]+"[rate][]']").val();
-         
-      } else{
-console.log("nada");
-      };
+      if (languages.arr_lang[i].visible==true) {
+       data_lang.arr_lang[i].name=$("[name='"+arr_lang[i]+"[name][]']").val();
+       data_lang.arr_lang[i].title=$("[name='"+arr_lang[i]+"[title][]']").val();
+       data_lang.arr_lang[i].patch_image=$("[name='"+arr_lang[i]+"[patch_image][]']").val();
+       data_lang.arr_lang[i].rate=$("[name='"+arr_lang[i]+"[rate][]']").val();
+
+     } else{
+      console.log("nada");
     };
-    
-  });
+  };
+
+});
 </script>
 
 

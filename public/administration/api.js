@@ -19,7 +19,7 @@ $(function() {
 	function getService () {
 	$.get(server+'get_services_documents', function(data,status){/*alert("Data: " + data + "\nStatus: " + status);*/ });	
 }
-// 		SAVE AJAX        
+// 		SAVE AJAX  [Save Service]      
 $(function(){
 	$('#InputSaveService').click(function(event) {
 		$.ajaxSetup({
@@ -82,3 +82,78 @@ function all_services () {
 	function Good (item) {
 		swal("Good job!", "The "+item+" been registered successfully.", "success"); 
 	}
+
+/*
+*
+* Update Language Service
+*
+*/
+
+$(function(){
+	$('#update').click(function(event) {
+		$.ajaxSetup({
+			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		})
+		event.preventDefault();
+		var formId = '#edit_lang';
+		$.ajax({
+			url: $(formId).attr('action'),
+			type: $(formId).attr('method'),
+			data: $(formId).serialize(),
+			dataType: 'html',
+			success: function(result){
+				if ($(formId).find("input:first-child").attr('value') == 'PUT') {
+					var $jsonObject = jQuery.parseJSON(result);
+					$(location).attr('href',$jsonObject.url);
+				}
+				else{
+					//$(formId)[0].reset();
+					console.log(result);
+					Good("Service");
+					//all_services ();
+				}
+			},
+			error: function(){
+				console.log('Error');
+			}
+		});
+	});
+}); 
+
+
+/*
+*
+* Update Target
+*
+*/
+
+$(function(){
+	$('#save_targets').click(function(event) {
+		$.ajaxSetup({
+			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		})
+		event.preventDefault();
+		var formId = '#edit_target';
+		$.ajax({
+			url: $(formId).attr('action'),
+			type: $(formId).attr('method'),
+			data: $(formId).serialize(),
+			dataType: 'html',
+			success: function(result){
+				if ($(formId).find("input:first-child").attr('value') == 'PUT') {
+					var $jsonObject = jQuery.parseJSON(result);
+					$(location).attr('href',$jsonObject.url);
+				}
+				else{
+					//$(formId)[0].reset();
+					console.log(result);
+					Good("Service");
+					//all_services ();
+				}
+			},
+			error: function(){
+				console.log('Error');
+			}
+		});
+	});
+}); 

@@ -100,7 +100,7 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
         'uses' => 'LanguagesAvailableController@edit'
         ]);
 
-    Route::put('{id}', [
+    Route::post('{id}', [
         'as'   => 'languages_available.update', 
         'uses' => 'LanguagesAvailableController@update'
         ]);

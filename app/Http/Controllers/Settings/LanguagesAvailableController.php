@@ -46,9 +46,6 @@ class LanguagesAvailableController extends Controller
             ]);
      }
 
-
-
-
     /**
      * Store a newly created resource in storage.
      *
@@ -142,41 +139,51 @@ class LanguagesAvailableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $LA = LanguageAvailable::find($id);
-        $LA->name = $request->input('name');
-        $LA->title = $request->input('title');      
-        $LA->patch_image = $request->input('patch_image');
-        $LA->iso_code = $request->input('iso_code');        
-        $LA->language_family = $request->input('family');
-        //$LA->target_languages = $target_languages;
-        $LA->active=$request->input('state');;
+        if($request->ajax()) { 
+                //     $LA = LanguageAvailable::find($request->input('id'));
+                //     $LA->name = $request->input('name');
+                //     $LA->title = $request->input('title');      
+                //     $LA->patch_image = $request->input('patch_image');
+                //     $LA->iso_code = $request->input('iso_code');        
+                //     $LA->language_family = $request->input('family');
+                // //$LA->target_languages = $target_languages;
+                //     $LA->active=$request->input('state');;
 
-        $LA->save();       
+        //$LA->save();       
 
         //$tt=json_decode($target_languages);
-        
-        return $LA;    
+
+            return $request->input();  
+
+        }
     }
 
  /***
  // Function Update Target Language [ format JSON ]
  **/
- public function updateTargetLanguages(Request $request, $id)
+ public function updateTargetLanguages(Request $request)
  {
-    $LA = LanguageAvailable::find($id);    
-    $data_json = $request->input('json_new_data');
 
-     $LA->target_languages =stripslashes( json_encode($data_json,true));  
-     //$LA->target_languages = substr($LA->target_languages,1);   
-     $del = count($LA->target_languages);
-     $LA->save();
+    //if($request->ajax()) {     }
 
-     var_dump( $LA->target_languages);
-    // return false;
+    $all=$request->input();
 
-    //return $data_json;
+    $sel = $request->input('selets');
+
+   // recorrer arreglo de selecciones y convertir en objeto
+
+    $rec =new \stdClass;
+
+    for ($i=0; $i < count($sel) ; $i++) { 
+     $v = $sel[$i];
+     $c = $request->input($v);
+     $rec->$v = $c;
+ }
+ // print_r($rec);
+return json_encode($rec);
+
 
 }
 
