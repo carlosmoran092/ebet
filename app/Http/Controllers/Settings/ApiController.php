@@ -36,7 +36,7 @@ class ApiController extends Controller
     	$experts = Experts::all();	
     	$deliveries = Deliveries::all();
       $LA = LanguageAvailable::all();
-    	return view('administration.settings.configuration.api',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+      return view('administration.settings.configuration.api',['LA'=>$LA,'services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
     }
 
 
@@ -66,38 +66,51 @@ class ApiController extends Controller
     public function storteService(Request $request)
     {
       if($request->ajax()) {  
-         $new_service = new Services;
-         $new_service->title = $request->input('title');
-         $new_service->rates = $request->input('rates');
-         $new_service->save();   
-         return "Guardado";  
+       $new_service = new Services;
+       $new_service->title = $request->input('title');
+       $new_service->rates = $request->input('rates');
+       $new_service->save();   
+       return "Guardado";  
      }else{ return "Algo va mal";}
- }
+   }
 
- public function storteExpert(Request $data)
- {
-   $services   = new Services;
-   $experts    = new Experts;
-   $deliveries = new Deliveries;
+   public function storteExpert(Request $data)
+   {
+     $services   = new Services;
+     $experts    = new Experts;
+     $deliveries = new Deliveries;
 
-   $expert->title = $data->input('title');
-   $expert->rates = $data->input('rates');
+     $expert->title = $data->input('title');
+     $expert->rates = $data->input('rates');
 
-   $expert->save();
+     $expert->save();
 
-   return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
-}
+     return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+   }
 
-public function storteDelivery(Request $data)
+   public function storteDelivery(Request $data)
+   {
+     $services   = new Services;
+     $experts    = new Experts;
+     $deliveries = new Deliveries;
+     $delivery->title = $data->input('title');
+     $delivery->rates = $data->input('rates');
+     $delivery->save();
+
+     return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+   }
+
+/*
+*
+* Print Services
+*
+*
+*/
+
+public function PrintServicesDocuments()
 {
-   $services   = new Services;
-   $experts    = new Experts;
-   $deliveries = new Deliveries;
-   $delivery->title = $data->input('title');
-   $delivery->rates = $data->input('rates');
-   $delivery->save();
-
-   return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+  $print = Services::all();
+  return view('administration.settings.configuration.partials.services',['print'=>$print]);
 }
 
 
@@ -109,16 +122,16 @@ public function get_services_documents(){
 // UPDATE //
 
 public function UpdateService(Request $request, $id){
-   $service = Services::find($id);
+ $service = Services::find($id);
 }
 
 
 // DELETE //
 
 public function deleteService($id){
-    $id = $id;
-    DB::table('services')->where('id', '=', $id)->delete();
-    return "Delete OK";
+  $id = $id;
+  DB::table('services')->where('id', '=', $id)->delete();
+  return "Delete OK";
 }
 
 

@@ -157,3 +157,17 @@ $(function(){
 		});
 	});
 }); 
+
+
+
+/*
+*
+*
+*
+*
+*/
+
+function reload_services () {
+	 $("#print_service").load(""+server+"print_services");
+}
+        

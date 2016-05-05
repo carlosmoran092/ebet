@@ -112,26 +112,11 @@
             <div id="edit_service"></div>
           </div>
 
-          <div class="col-md-6">
-            <div class="list-table-items"> 
-              <div class="table-responsive">
-               <table class="table table-hover">
-                 <thead>
-                   <tr>
-                     <th width="60%">Title</th>
-                     <th width="10%">Price/Word</th>
-                     <th width="30%"></th>
-                   </tr>
-                 </thead>
-                 <tbody id="get_services">
-
-
-
-                 </tbody>
-               </table>
-             </div>
-           </div>
+          <div class="col-md-6" id="print_service">
+     
          </div>
+
+         
        </div> {{-- End Services --}}
 
        <div role="tabpanel" class="tab-pane" id="experts">

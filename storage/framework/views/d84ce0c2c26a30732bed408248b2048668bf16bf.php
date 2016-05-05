@@ -117,10 +117,7 @@
 
          <?php echo Form::open(array('action' => array('Settings\LanguagesAvailableController@updateTargetLanguages',$lang->id),'before' => 'csrf','method' => 'post','id'=>'edit_target')); ?>
 
-
-
          <?php echo Form::hidden('id', ''.$lang->id.'');; ?>
-
 
          <div class="col-lg-12">
           <div class="col-lg-10">
@@ -137,39 +134,34 @@
           </div>
           <br>
         </div>        
-
         <div class="col-lg-12">
           <br>
           <?php foreach($LA as $LAG): ?>
           <div id="<?php echo $LAG->name; ?>" class="col-lg-12">
             <div class="form-group col-md-5">
               <h4><?php echo HTML::image('images/small/'.$LAG->patch_image.'.png'); ?> <?php echo $LAG->title; ?></h4>
-            </div>          
+            </div>
+            <input type="hidden" value="<?php echo $LAG->title; ?>" type="text" name="<?php echo $LAG->name; ?>[title][]">          
             <input type="hidden" value="<?php echo $LAG->name; ?>" type="text" name="<?php echo $LAG->name; ?>[name][]"> 
-            <input type="hidden" value="<?php echo $LAG->patch_image; ?>" type="text" name="<?php echo $LAG->name; ?>[patch_image][]">             
+            <input type="hidden" value="<?php echo $LAG->patch_image; ?>" type="text" name="<?php echo $LAG->name; ?>[patch_image][]">      
             <div class="form-group col-md-3 col-sm-4">
               <input type="number" name="<?php echo $LAG->name; ?>[rate][]" value="" min="0" step="0.010" class="form-control language-rate-value" ></div>
-
               <div class="form-group col-md-2 col-sm-3"> <button attr-id="<?php echo $LAG->name; ?>" class="btn btn-primary btn-xs hide_rate icon-cancel"></button> </div>
             </div>
             <?php endforeach; ?> 
           </div>
-          
-
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-        <?php /* <button type="button" id="save_targets" class="btn btn-primary">Save changes</button> */ ?>
+        <?php /* <button type="submit" class="btn btn-primary">Save changes</button> */ ?>
+        <button type="button" id="save_targets" class="btn btn-primary">Save changes</button>
       </div>
       <?php echo Form::close(); ?>
 
     </div>
   </div>
 </div>
-
-
 <?php $__env->stopSection(); ?>
 
 
@@ -271,7 +263,6 @@ Los guarda en objeto
        data_lang.arr_lang[i].title=$("[name='"+arr_lang[i]+"[title][]']").val();
        data_lang.arr_lang[i].patch_image=$("[name='"+arr_lang[i]+"[patch_image][]']").val();
        data_lang.arr_lang[i].rate=$("[name='"+arr_lang[i]+"[rate][]']").val();
-
      } else{
       console.log("nada");
     };

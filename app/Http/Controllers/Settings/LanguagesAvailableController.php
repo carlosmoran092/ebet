@@ -142,49 +142,44 @@ class LanguagesAvailableController extends Controller
     public function update(Request $request)
     {
         if($request->ajax()) { 
-                //     $LA = LanguageAvailable::find($request->input('id'));
-                //     $LA->name = $request->input('name');
-                //     $LA->title = $request->input('title');      
-                //     $LA->patch_image = $request->input('patch_image');
-                //     $LA->iso_code = $request->input('iso_code');        
-                //     $LA->language_family = $request->input('family');
-                // //$LA->target_languages = $target_languages;
-                //     $LA->active=$request->input('state');;
-
-        //$LA->save();       
-
-        //$tt=json_decode($target_languages);
-
+            $id = $request->input('id');
+            $LA = LanguageAvailable::find($id);
+            $LA->name = $request->input('name');
+            $LA->title = $request->input('title');      
+            $LA->patch_image = $request->input('patch_image');
+            $LA->iso_code = $request->input('iso_code');        
+            $LA->language_family = $request->input('family');
+            $LA->active=$request->input('state');
+            $LA->save();    
             return $request->input();  
-
         }
     }
-
  /***
  // Function Update Target Language [ format JSON ]
  **/
  public function updateTargetLanguages(Request $request)
  {
 
-    //if($request->ajax()) {     }
+    if($request->ajax()) { 
 
-    $all=$request->input();
-
-    $sel = $request->input('selets');
-
+        $id = $request->input('id');  
+        $lang=LanguageAvailable::find($id);
+        $all=$request->input();
+        $sel = $request->input('selets');
    // recorrer arreglo de selecciones y convertir en objeto
 
-    $rec =new \stdClass;
-
-    for ($i=0; $i < count($sel) ; $i++) { 
-     $v = $sel[$i];
-     $c = $request->input($v);
-     $rec->$v = $c;
- }
+        $rec =new \stdClass;
+        for ($i=0; $i < count($sel) ; $i++) { 
+         $v = $sel[$i];
+         $c = $request->input($v);
+         $rec->$v = $c;
+     }
  // print_r($rec);
-return json_encode($rec);
-
-
+     $tl = json_encode($rec);
+     $lang->target_languages =  $tl;
+     $lang->save();   
+     return "ok save"; 
+ }
 }
 
 /***
@@ -201,6 +196,7 @@ public function getTarget($id)
     return var_dump($value);
     
 }
+
 
     /**
      * Remove the specified resource from storage.

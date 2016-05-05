@@ -132,27 +132,27 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
     {
 
 
-     Route::get('{id}/edit', [
+       Route::get('{id}/edit', [
         'as'   => 'rates_language.edit', 
         'uses' => 'RateLanguageController@edit'
         ]);
 
-     Route::get('/', [
+       Route::get('/', [
         'as'   => 'rates_language.index', 
         'uses' => 'RateLanguageController@index'
         ]);
 
-     Route::get('/getalllanguages', [
+       Route::get('/getalllanguages', [
         'as'   => 'rates_language.index', 
         'uses' => 'RateLanguageController@getAllLanguages'
         ]);
 
-     Route::put('{id}', [
+       Route::put('{id}', [
         'as'   => 'rate_language.update', 
         'uses' => 'RateLanguageController@update'
         ]);
 
- });
+   });
 
     /********************************************/
   //  Configuration API
@@ -162,7 +162,7 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
     {
 
 
-     Route::get('/', [
+       Route::get('/', [
         'as'   => 'serttings_api', 
         'uses' => 'ApiController@index'
         ]);
@@ -170,58 +170,71 @@ Route::group(['prefix' => 'settings/languages_available', 'namespace' => 'Settin
        // DOCUMENTS
             //LOAD
 
-          Route::get('get_services_documents',[
+       Route::get('get_services_documents',[
         'as' => 'get_services_documents',
         'uses' => 'ApiController@getServices'
+        ]);
+
+       Route::get('print_services',[
+        'as' => 'print_services',
+        'uses' => 'ApiController@PrintServicesDocuments'
         ]);
 
 
             //STORE
 
-     Route::post('store_service',[
+       Route::post('store_service',[
         'as' => 'store_service',
         'uses' => 'ApiController@storteService'
         ]);
 
-     Route::post('store_expert',[
+       Route::post('store_expert',[
         'as' => 'store_expert',
         'uses' => 'ApiController@storteExpert'
         ]);  
 
-     Route::post('store_delivery',[
+       Route::post('store_delivery',[
         'as' => 'store_delivery',
         'uses' => 'ApiController@storteDelivery'
         ]);  
             //DELETE
 
-     Route::get('delete_service/{id}',[
+       Route::get('delete_service/{id}',[
         'as' => 'delete_service',
         'uses' => 'ApiController@deleteService'
         ]);
 
-     Route::get('delete_expert/{id}',[
+       Route::get('delete_expert/{id}',[
         'as' => 'delete_expert',
         'uses' => 'ApiController@deleteExpert'
         ]);  
-     Route::get('delete_delivery/{id}',[
+       Route::get('delete_delivery/{id}',[
         'as' => 'delete_delivery',
         'uses' => 'ApiController@deleteDelivery'
         ]);
             //EDIT 
-     Route::put('update_service',[
+       Route::put('update_service',[
         'as' => 'update_service',
         'uses' => 'ApiController@UpdateService'
         ]);  
-     Route::put('update_service',[
+       Route::put('update_service',[
         'as' => 'update_service',
         'uses' => 'ApiController@UpdateService'
         ]); 
 
 
- });
+   });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/administration', 'HomeAdmin@index');
 });
+
+
+
+/*
+*
+*
+*
+*/
