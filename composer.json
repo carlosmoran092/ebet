@@ -14,7 +14,8 @@
         "kartik-v/bootstrap-fileinput": "*",
         "psy/psysh": "@stable",
         "laravelcollective/html": "5.*",
-        "intervention/image": "*"
+        "intervention/image": "*",
+        "laracasts/generators":"*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

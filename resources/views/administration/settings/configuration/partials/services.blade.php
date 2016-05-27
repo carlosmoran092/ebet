@@ -9,17 +9,14 @@
        				</tr>
        			</thead>
        			<tbody>
-@foreach ($print as $print)
-<tr>
+       				@foreach ($print as $print)
+       				<tr>
        					<th>{!! $print->title !!}</th>
        					<th>{!! $print->rates !!}</th>
-       					<th> <button class="btn btn-xs btn-primary">Edit</button> </th>
+       					<th> <button type="button" class="btn btn-xs btn-default"><i class=" icon-pencil-alt"></i></button>
+                                          <button type="button" class="btn btn-xs btn-default"><i class=" icon-cancel-2"></i></button> </th>
        				</tr>
-
-@endforeach
-       				
-
-
+       				@endforeach    			
        			</tbody>
        		</table>
        	</div>

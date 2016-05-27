@@ -184,11 +184,11 @@
                                     <div class="row fileupload-buttonbar">
                                         <div class="col-lg-12">
                                             <!-- The fileinput-button span is used to style the file input field as button -->
-                                <span type="button" class="btn btn-success fileinput-button">
-                                    <i class="glyphicon glyphicon-plus"></i>
-                                    <span>Add files</span>
-                                    <input type="file" name="files[]" multiple>
-                                </span>
+                                            <span type="button" class="btn btn-success fileinput-button">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                                <span>Add files</span>
+                                                <input type="file" name="files[]" multiple>
+                                            </span>
                                             <button type="submit" class="btn btn-primary start">
                                                 <i class="glyphicon glyphicon-upload"></i>
                                                 <span>Start upload</span>
@@ -209,99 +209,87 @@
                                     </div>
                                     <!-- The table listing the files available for upload/download -->
                                     <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-                                    </form>
+                                </form>
 
 
-                                    <div class="alert alert-success">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                        <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
-                                    </div>
-
-
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <strong>Important,</strong> Receive our policy of <a href="#">confidentiality and data protection</a>
                                 </div>
                             </div>
-                            <!-- END  Upload Files  -->
-
                         </div>
-
+                        <!-- END  Upload Files  -->
                     </div>
+                </div>                  
+            </div>
+        </section>
+
+        <section class="col-md-5 go_aplication">
+
+            <br>
 
 
-
-                    <hr>
-                 </div>
-
-                                </section>
-
-                                <hr>
-
-
-                            <section class="col-md-5 go_aplication">
-
-                                <br>
-
-
-                                <div class="rate-aplication col-md-12">
-                                    <span class="col-md-9 col-sm-9 col-xs-9">
-                                      <h5><i class="icon-heart-empty"></i> Text translation and proofreading</h5>
-                                  </span>
-                                  <span class="col-md-3 text-right">
-                                     0<i class="icon-dollar-1"></i>
-                                 </span>
-                             </div>
-
-
-                             <div class="rate-aplication col-md-12">
-                              <span class="col-md-9 col-sm-9 col-xs-9">
-                                <h5><i class="icon-person"></i> Expert Medic</h5>
-                            </span>
-                            <span class="col-md-3 text-right">
-                               0.010<i class="icon-dollar-1"></i>
-                           </span>
-                       </div>
-
-                       <div class="rate-aplication col-md-12">
-                        <span class="col-md-9 col-sm-9 col-xs-9">
-                          <h5><i class="icon-docs-1"></i> Keep original style and format</h5>
-                      </span>
-                      <span class="col-md-3 text-right">
-                         0<i class="icon-dollar-1"></i>
-                     </span>
-                 </div>
-
-
-                 <div class="rate-aplication col-md-12">
-                    <span class="col-md-9 col-sm-9 col-xs-9">
-                      <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Armenia.png" width="20" alt=""> Armenian</h5>
-                  </span>
-                  <span class="col-md-3 text-right">
-                     0.070<i class="icon-dollar-1"></i>
-                 </span>
-             </div>
-
-             <div class="rate-aplication col-md-12">
+            <div class="rate-aplication col-md-12">
                 <span class="col-md-9 col-sm-9 col-xs-9">
-                  <h5><i class="icon-docs-1"></i> Documents</h5>
-                  <div class="col-md-12" id="list_documents">
-
-                  </div>
+                  <h5><i class="icon-heart-empty"></i> Text translation and proofreading</h5>
               </span>
+              <span class="col-md-3 text-right">
+               0<i class="icon-dollar-1"></i>
+           </span>
+       </div>
 
 
-              <br>
-              <button class="btn btn-block btn-primary">Check Quote</button>
+       <div class="rate-aplication col-md-12">
+          <span class="col-md-9 col-sm-9 col-xs-9">
+            <h5><i class="icon-person"></i> Expert Medic</h5>
+        </span>
+        <span class="col-md-3 text-right">
+         0.010<i class="icon-dollar-1"></i>
+     </span>
+ </div>
+
+ <div class="rate-aplication col-md-12">
+    <span class="col-md-9 col-sm-9 col-xs-9">
+      <h5><i class="icon-docs-1"></i> Keep original style and format</h5>
+  </span>
+  <span class="col-md-3 text-right">
+   0<i class="icon-dollar-1"></i>
+</span>
+</div>
 
 
-          </section>
+<div class="rate-aplication col-md-12">
+    <span class="col-md-9 col-sm-9 col-xs-9">
+      <h5>  <img src="images/small/United States.png" width="20" alt="">   American English <i class="icon-right-1"></i> <img src="images/small/Armenia.png" width="20" alt=""> Armenian</h5>
+  </span>
+  <span class="col-md-3 text-right">
+   0.070<i class="icon-dollar-1"></i>
+</span>
+</div>
 
+<div class="rate-aplication col-md-12">
+    <span class="col-md-9 col-sm-9 col-xs-9">
+      <h5><i class="icon-docs-1"></i> Documents</h5>
+      <div class="col-md-12" id="list_documents">
 
       </div>
-  </div><!--//row-->
+  </span>
+
 
   <br>
+  <button class="btn btn-block btn-primary">Check Quote</button>
 
-  <!-- The blueimp Gallery widget -->
-  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+
+</section>
+
+
+</div>
+</div><!--//row-->
+
+<br>
+
+<!-- The blueimp Gallery widget -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
     <div class="slides"></div>
     <h3 class="title"></h3>
     <a class="prev">‹</a>

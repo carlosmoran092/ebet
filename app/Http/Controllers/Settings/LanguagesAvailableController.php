@@ -111,9 +111,7 @@ class LanguagesAvailableController extends Controller
     public function edit($id)
     {   
         // Languages Available
-        $LA   = LanguageAvailable::where('active', 1)
-        ->orderBy('name', 'asc')               
-        ->get();
+        $LA   = LanguageAvailable::all();
         $lang = LanguageAvailable::find($id);
         //Country Directory
         $CD = CountryDirectory::all() ;  

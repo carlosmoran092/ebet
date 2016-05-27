@@ -40,7 +40,11 @@ class ApiController extends Controller
     }
 
 
-// GET //
+/*
+*
+* GET - Print [Services,Experts,Deliveries]
+*
+*/
     public function getServices()
     {
     	$services = Services::all();
@@ -60,10 +64,14 @@ class ApiController extends Controller
     }
 // END GET //
 
-
+/*
+*
+* Save [Services,Experts,Deliveries]
+*
+*/
 
 // STORE SERVICE //
-    public function storteService(Request $request)
+    public function storeService(Request $request)
     {
       if($request->ajax()) {  
        $new_service = new Services;
@@ -73,44 +81,52 @@ class ApiController extends Controller
        return "Guardado";  
      }else{ return "Algo va mal";}
    }
-
-   public function storteExpert(Request $data)
+// STORE EXPERT //
+   public function storeExpert(Request $request)
    {
-     $services   = new Services;
-     $experts    = new Experts;
-     $deliveries = new Deliveries;
-
-     $expert->title = $data->input('title');
-     $expert->rates = $data->input('rates');
-
-     $expert->save();
-
-     return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+      if($request->ajax()) {  
+       $new_expert = new Experts;
+       $new_expert->title = $request->input('title');
+       $new_expert->rates = $request->input('rates');
+       $new_expert->save();   
+       return "Guardado";  
+     }else{ return "Algo va mal";}
    }
-
-   public function storteDelivery(Request $data)
-   {
-     $services   = new Services;
-     $experts    = new Experts;
-     $deliveries = new Deliveries;
-     $delivery->title = $data->input('title');
-     $delivery->rates = $data->input('rates');
-     $delivery->save();
-
-     return view('administration.settings.configuration.api',['services'=>$services,'experts'=>$experts,'deliveries'=>$deliveries]);
+// STORE DELIBERY //
+   public function storeDelivery(Request $request)
+    {
+      if($request->ajax()) {  
+       $new_delivery = new Deliveries;
+       $new_delivery->title = $request->input('title');
+       $new_delivery->rates = $request->input('rates');
+       $new_delivery->save();   
+       return "Guardado";  
+     }else{ return "Algo va mal";}
    }
 
 /*
 *
-* Print Services
-*
+* Print Services - Experts - Deliveries
 *
 */
+
 
 public function PrintServicesDocuments()
 {
   $print = Services::all();
   return view('administration.settings.configuration.partials.services',['print'=>$print]);
+}
+
+public function PrintExpertsDocuments()
+{
+  $print = Experts::all();
+  return view('administration.settings.configuration.partials.experts',['print'=>$print]);
+}
+
+public function PrintDeliveriesDocuments()
+{
+  $print = Deliveries::all();
+  return view('administration.settings.configuration.partials.delivery',['print'=>$print]);
 }
 
 

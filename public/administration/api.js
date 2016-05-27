@@ -41,7 +41,8 @@ $(function(){
 					$(formId)[0].reset();
 					console.log(result);
 					Good("Service");
-					all_services ();
+					reload_services();
+
 				}
 			},
 			error: function(){
@@ -54,7 +55,73 @@ $(function(){
 
 //		END SAVE AJAX    <---
 
+// 		SAVE AJAX  [Save Expert]      
+$(function(){
+	$('#InputSaveExpert').click(function(event) {
+		$.ajaxSetup({
+			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		})
+		event.preventDefault();
+		var formId = '#SaveExpert';
+		$.ajax({
+			url: $(formId).attr('action'),
+			type: $(formId).attr('method'),
+			data: $(formId).serialize(),
+			dataType: 'html',
+			success: function(result){
+				if ($(formId).find("input:first-child").attr('value') == 'PUT') {
+					var $jsonObject = jQuery.parseJSON(result);
+					$(location).attr('href',$jsonObject.url);
+				}
+				else{
+					$(formId)[0].reset();
+					console.log(result);
+					Good("Service");
+					reload_experts();
+				}
+			},
+			error: function(){
+				console.log('Error');
+			}
+		});
+	});
+}); 
+//		END SAVE AJAX    <---
 
+// 		SAVE AJAX  [Save Delivey]      
+$(function(){
+	$('#InputSaveDelivery').click(function(event) {
+		$.ajaxSetup({
+			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		})
+		event.preventDefault();
+		var formId = '#SaveDelivery';
+		$.ajax({
+			url: $(formId).attr('action'),
+			type: $(formId).attr('method'),
+			data: $(formId).serialize(),
+			dataType: 'html',
+			success: function(result){
+				if ($(formId).find("input:first-child").attr('value') == 'PUT') {
+					var $jsonObject = jQuery.parseJSON(result);
+					$(location).attr('href',$jsonObject.url);
+				}
+				else{
+					$(formId)[0].reset();
+					console.log(result);
+					Good("Service");
+					reload_deliveries();
+				}
+			},
+			error: function(){
+				console.log('Error');
+			}
+		});
+	});
+}); 
+
+
+//		END SAVE AJAX    <---
 
 
 });
@@ -168,6 +235,12 @@ $(function(){
 */
 
 function reload_services () {
-	 $("#print_service").load(""+server+"print_services");
+	$("#print_service").load(""+server+"print_services");
 }
-        
+function reload_experts () {
+	$("#print_expert").load(""+server+"print_experts");
+}
+function reload_deliveries () {
+	$("#print_delivery").load(""+server+"print_deliveries");
+}
+

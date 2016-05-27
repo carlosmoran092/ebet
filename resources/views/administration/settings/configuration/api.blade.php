@@ -20,7 +20,7 @@
       <div>
        <!-- Nav tabs -->
        <ul class="nav nav-tabs" role="tablist">
-         <li role="presentation" class="active"><a href="#languages" aria-controls="languages" role="tab" data-toggle="tab"><i class=" icon-docs-1"></i> Languages</a></li>
+         <li role="presentation" class="active"><a href="#languages" aria-controls="languages" role="tab" data-toggle="tab"><i class=" icon-language"></i> Languages</a></li>
          <li role="presentation"><a href="#documents" aria-controls="documents" role="tab" data-toggle="tab"><i class=" icon-docs-1"></i> Documents Translation</a></li>
          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class=" icon-video-1"></i> Video & Audio</a></li>
          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="icon-window"></i> Websites</a></li>
@@ -56,7 +56,7 @@
              @foreach ($LA as $LA)
              <tr>
               <td><h3><a href="#"> <img src="{!! URL::to('images/small/'); !!}/{!!$LA->patch_image!!}.png "> {!! $LA->title !!}</a></h3></td>
-                            <td>
+              <td>
                 @if ($LA->active=="0")
                 <h4><span class="label label-danger">Not Available</span></h4>
                 @else
@@ -66,7 +66,7 @@
               <td>
                 <a href="{!! URL::to('settings/languages_available')!!}/{!!$LA->id!!}/edit" class="btn btn-info btn-sm"><i class="icon-cogs"></i> config</a>
               </td>
-                      
+
             </tr>
             @endforeach                   
 
@@ -94,7 +94,7 @@
            <div class="col-md-6">
              {{--  --}}
 
-             {!! Form::open(array('method' => 'post', 'action' => 'Settings\ApiController@storteService','id'=>'SaveService')) !!}
+             {!! Form::open(array('method' => 'post', 'action' => 'Settings\ApiController@storeService','id'=>'SaveService')) !!}
 
              <div class="form-group col-md-9">
                <label for="">Title of service</label>
@@ -104,8 +104,8 @@
                <label for="">Price/Word</label>
                <input type="number" name="rates" class="form-control" value="" min="0" id="rate-service" step="0.01" required="required">
              </div>
-             <div class="form-group col-md-12">
-              <button class="btn-md btn btn-primary" type="submit" id="InputSaveService">Guardar</button>
+             <div class="form-group col-md-12">             
+              <button class="btn-md btn btn-primary" type="submit" id="InputSaveService">Create</button>
             </div>
             {!! Form::close() !!}
             {{--  --}}
@@ -113,58 +113,39 @@
           </div>
 
           <div class="col-md-6" id="print_service">
-     
-         </div>
 
-         
-       </div> {{-- End Services --}}
+          </div>
 
-       <div role="tabpanel" class="tab-pane" id="experts">
+
+        </div> {{-- End Services --}}
+
+        <div role="tabpanel" class="tab-pane" id="experts">
 
          <div class="col-md-6" ><br>
            {{--  --}}
-           {!! Form::open(array('method' => 'post', 'url' => 'settings/api/store_experts')) !!}
+           {!! Form::open(array('method' => 'post', 'url' => 'settings/api/store_expert', 'id'=>'SaveExpert')) !!}
            <div class="form-group col-md-9">
              <label for="">Expert</label>
-             <input type="text" class="form-control" id="" placeholder="" required="required">
+             <input type="text" name="title" class="form-control" id="" placeholder="" required="required">
            </div>
            <div class="form-group col-md-3">
              <label for="">Price/Word</label>
-             <input type="number" class="form-control" min="0" id="" step="0.01" required="required">
+             <input type="number" name="rates" class="form-control" min="0" id="" step="0.01" required="required">
            </div>
            <div class="form-group col-md-12">
-             {!! Form::submit('Create',array('class' => 'btn btn-sm btn-default')) !!}
+             <button class="btn-md btn btn-primary" type="submit" id="InputSaveExpert">Create</button>
+             
            </div>
            {!! Form::close() !!}
            {{--  --}}
            <div id="edit_expert"></div>
          </div>
 
-         <div class="col-md-6"><br>
-           <div class="table-responsive">
-             <table class="table table-hover">
-               <thead>
-                 <tr>
-                   <th width="60%">Title</th>
-                   <th width="10%">Price/Word</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 @foreach ($experts as $expert)
-                 <tr>
-                   <td>{!! $expert->title !!}</td>
-                   <td>{!! $expert->rates !!}</td>
-                   <td>
-                     <button type="button" class="btn btn-xs btn-default"><i class=" icon-pencil-alt"></i></button>
-                     <button type="button" class="btn btn-xs btn-default"><i class=" icon-trash-8"></i></button>
-                   </td>
-                 </tr>
-                 @endforeach
-               </tbody>
-             </table>
-           </div>
+         <div class="col-md-6" id="print_expert">
 
          </div>
+
+
 
 
        </div> {{-- End Experts --}}
@@ -174,7 +155,7 @@
 
          <div class="col-md-6"><br>
            {{--  --}}
-           {!! Form::open(array('method' => 'post', 'url' => 'settings/api/store_delivery')) !!}
+           {!! Form::open(array('method' => 'post', 'url' => 'settings/api/store_delivery', 'id'=>'SaveDelivery')) !!}
 
            <div class="form-group col-md-9">
              <label for="">Delivery Type</label>
@@ -189,7 +170,7 @@
 
 
            <div class="form-group col-md-12">
-             {!! Form::submit('Create',array('class' => 'btn btn-sm btn-default')) !!}
+             <button class="btn-md btn btn-primary" type="submit" id="InputSaveDelivery">Create</button>
 
            </div>
            {!! Form::close() !!}
@@ -197,31 +178,11 @@
            <div id="edit_delivery"></div>
          </div>
 
-         <div class="col-md-6"><br>
+         <div class="col-md-6" id="print_delivery">
 
-           <div class="table-responsive">
-             <table class="table table-hover">
-               <thead>
-                 <tr>
-                   <th width="60%">Title</th>
-                   <th width="10%">Price/Word</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 @foreach ($deliveries as $delivery)
-                 <tr>
-                   <td>{!! $delivery->title !!}</td>
-                   <td>{!! $delivery->rates !!}</td>
-                   <td>
-                     <button type="button" class="btn btn-xs btn-default"><i class=" icon-pencil-alt"></i></button>
-                     <button type="button" class="btn btn-xs btn-default"><i class=" icon-trash-8"></i></button>
-                   </td>
-                 </tr>
-                 @endforeach
-               </tbody>
-             </table>
-           </div>
          </div>
+
+         
        </div> {{-- End Delivery --}}
      </div>
    </div>
@@ -236,10 +197,6 @@
 </div>
 
 </div>
-
-
-
-
 
 </div>
 
@@ -268,17 +225,18 @@
 
 
 <script>
-  $(document).ready(function($) {
-
+ 
    $(document).ready(function() {
     $('#example').DataTable();
-  } );
+  }); 
 
-
-   all_services ();
- });
 </script>
 
+<script>
+  reload_services (); 
+  reload_experts () ;
+  reload_deliveries ();
+</script>
 
 
 @stop
